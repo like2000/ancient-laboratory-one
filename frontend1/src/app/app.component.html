@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+
+  <span style="padding: 0 40px;">Ancient Laboratory</span>
+
+  <a mat-button routerLink="home" routerLinkActive="active">Home</a>
+  <a mat-button routerLink="album" routerLinkActive="active">Album</a>
+</mat-toolbar>
+
+<div class="w3-container mat-border-primary">
+  <router-outlet></router-outlet>
+</div>
