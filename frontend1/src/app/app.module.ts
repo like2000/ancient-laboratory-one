@@ -11,13 +11,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from "@angular/material/input";
+import {MatInputModule} from '@angular/material/input';
+import {AlbumFilesComponent} from './core/album/album-files/album-files.component';
+import {AlbumComponent} from './core/album/album.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HomeDialogComponent
+    AlbumComponent,
+    HomeDialogComponent,
+    AlbumFilesComponent,
   ],
   imports: [
     BrowserModule,
