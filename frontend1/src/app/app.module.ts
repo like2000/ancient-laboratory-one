@@ -4,35 +4,25 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HomeComponent} from './core/home/home.component';
-import {HomeDialogComponent} from './core/home/home-dialog/home-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {AlbumFilesComponent} from './core/album/album-files/album-files.component';
-import {AlbumComponent} from './core/album/album.component';
+import {CoreModule} from './core/core.module';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AlbumComponent,
-    HomeDialogComponent,
-    AlbumFilesComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatToolbarModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatInputModule,
+    MatToolbarModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
