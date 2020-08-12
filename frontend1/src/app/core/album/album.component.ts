@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {API_URL} from '../../env';
 
 @Component({
   selector: 'app-album',
@@ -10,7 +7,7 @@ import {API_URL} from '../../env';
 })
 export class AlbumComponent implements OnInit {
 
-  constructor() {// private http: HttpClient) {
+  constructor() {
     this.selected = [false, false, false, false, false];
     this.range = [1, 2, 3, 4, 5];
   }
@@ -18,22 +15,17 @@ export class AlbumComponent implements OnInit {
   selected: Array<boolean>;
   range: Array<number>;
 
-  private static _handleError(err: HttpErrorResponse | any) {
-    return Observable.throw(err.message || 'Error: Unable to complete request.');
-  }
 
   ngOnInit(): void {
   }
 
-  // // GET list of public, future events
-  // getCards(): Observable<Card[]> {
-  //   return this.http
-  //     .get(`${API_URL}/exams`)//.catch(AlbumComponent._handleError);
-  // }
 
   toggleSelected(i): void {
-    this.selected[i] = !this.selected[i];
+    // this.selected[i] = !this.selected[i];
+    for (let k = 0; k < 6; k++) {
+      this.selected[k] = false;
+    }
+    this.selected[i] = true;
     console.log('Clicked - state ' + this.selected[i]);
   }
-
 }

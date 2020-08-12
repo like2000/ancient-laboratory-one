@@ -10,6 +10,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {CommonModule} from '@angular/common';
+import {MatButtonModule} from "@angular/material/button";
+import {AlbumCardsService} from "./album/album-cards.service";
 
 
 @NgModule({
@@ -27,8 +29,9 @@ import {CommonModule} from '@angular/common';
     MatGridListModule,
     MatCardModule,
     CommonModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [AlbumCardsService],
   bootstrap: []
 })
 export class CoreModule {
