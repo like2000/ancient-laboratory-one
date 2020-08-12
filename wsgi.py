@@ -1,8 +1,10 @@
 from flask import url_for, redirect
+from flask_cors import CORS
 
 from backend import create_app
 
 app = create_app()
+CORS(app)
 
 
 @app.route('/')

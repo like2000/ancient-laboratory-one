@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AlbumCardsService {
+export class AlbumCardsService implements OnInit {
 
   constructor(private http: HttpClient) {
   }
@@ -22,5 +22,8 @@ export class AlbumCardsService {
 
   addCards() {
 
+  }
+
+  ngOnInit(): void {
   }
 }
