@@ -7,6 +7,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import {MatInputModule} from '@angular/material/input';
     MatInputModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatGridListModule,
+    MatCardModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: []
