@@ -41,4 +41,17 @@ export class AlbumComponent implements OnInit {
       }
     );
   }
+
+  addData(): void {
+    console.log('Clicked!');
+    this.service.addCards();
+    // .subscribe(
+    //   (response) => {
+    //     console.log(response);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
+  }
 }
