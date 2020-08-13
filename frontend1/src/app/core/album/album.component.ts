@@ -27,11 +27,20 @@ export class AlbumComponent implements OnInit {
       this.selected[k] = false;
     }
     this.selected[i] = true;
-    console.log('Clicked - state ' + this.selected[i]);
   }
 
-  pushFab(): void {
-    console.log('Clicked!');
+  addData(): void {
+    this.service.addCards().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  getData(): void {
     this.service.getCards().subscribe(
       (response) => {
         console.log(response);
@@ -42,16 +51,14 @@ export class AlbumComponent implements OnInit {
     );
   }
 
-  addData(): void {
-    console.log('Clicked!');
-    this.service.addCards();
-    // .subscribe(
-    //   (response) => {
-    //     console.log(response);
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
+  deleteData(): void {
+    this.service.deleteCards().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

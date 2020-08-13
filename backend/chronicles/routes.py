@@ -1,9 +1,12 @@
 import json
 import pathlib
+import pandas as pd
 
 from flask import jsonify, request
 
 from backend.chronicles import blueprint
+
+global_data = {}
 
 
 @blueprint.route('/')
@@ -14,8 +17,9 @@ def index():
 @blueprint.route('/add', methods=['GET', 'POST'])
 def add():
     data = json.loads(request.data)
-    print(data)
-    return f"Hello from {pathlib.Path(__file__).parent.name}"
+    global_data.update({pd.to_datetime('now').strftime('%a %H:%M:%S'): data})
+    print(global_data)
+    return data
 
 
 @blueprint.route('/get', methods=['GET'])
@@ -26,7 +30,7 @@ def get():
         'comment': 'just a test',
         'description': 'some descriptive text now here'
     }
-    print(data)
+    print(global_data)
     return jsonify(data)
 
 
