@@ -1,6 +1,7 @@
+import json
 import pathlib
 
-from flask import jsonify
+from flask import jsonify, request
 
 from backend.chronicles import blueprint
 
@@ -11,7 +12,8 @@ def index():
 
 
 @blueprint.route('/add', methods=['GET', 'POST'])
-def add(data):
+def add():
+    data = json.loads(request.data)
     print(data)
     return f"Hello from {pathlib.Path(__file__).parent.name}"
 

@@ -23,7 +23,7 @@ export class AlbumCardsService implements OnInit {
   addCards() {
     const card: AlbumCards = new AlbumCards(1, '1234.jpg', 'johanni', 'a comment', 'some text');
 
-    this.http.post<AlbumCards>(API_URL + '/chronicles/add', card);
+    this.http.post<AlbumCards>(API_URL + '/chronicles/add', card).subscribe();
   }
 
   ngOnInit(): void {
