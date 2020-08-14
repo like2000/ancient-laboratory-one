@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-//            "deployUrl": "/angular/",
+            "deployUrl": "/angular/",
             "outputPath": "../backend/angular/static",
             "index": "src/index.html",
             "main": "src/main.ts",
