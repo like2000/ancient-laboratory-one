@@ -8,6 +8,6 @@ def index():
     return render_template('index.html')
 
 
-@blueprint.route('/<path:path>', methods=['GET', 'POST'])
-def static_proxy(path):
-    return send_from_directory('angular/static', path)
+# @blueprint.route('/<path:path>', methods=['GET', 'POST'])
+# def static_proxy(path):
+#     return send_from_directory('angular/static', path)
