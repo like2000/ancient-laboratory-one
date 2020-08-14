@@ -1,8 +1,8 @@
-import pathlib
+from flask import url_for, redirect
 
 from backend.album import blueprint
 
 
 @blueprint.route('/')
 def index():
-    return f"Hello from {pathlib.Path(__file__).parent.name}"
+    return redirect(url_for('angular_blue.index'))
