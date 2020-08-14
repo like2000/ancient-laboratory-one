@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return redirect(url_for('chronicles_blue.index'))
+    return redirect(url_for('angular_blue.index'))
 
 
 if __name__ == '__main__':
