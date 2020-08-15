@@ -9,18 +9,22 @@
 
 <p>home works!</p>
 
-<button mat-fab aria-label="Add another element" style="position: absolute; right: 60px; bottom: 60px;"
-        (click)="openDialog()">
+
+<input #fileInput hidden="true" type="file">
+<button mat-raised-button color="primary" style="position: absolute; right: 260px; bottom: 60px;"
+        (click)="fileInput.click()">Upload file
+</button>
+
+<button mat-fab aria-label="Add another element" style="position: absolute; right: 160px; bottom: 60px;">
   <mat-icon>add</mat-icon>
 </button>
 
-<input #fileInput hidden="true" type="file">
-<button mat-raised-button color="primary" style="position: absolute; right: 160px; bottom: 60px;" (click)="fileInput.click()">Upload file
+<button mat-fab aria-label="Add another element" style="position: absolute; right: 60px; bottom: 60px;"
+        (click)="openDialog()">
+  <mat-icon>publish</mat-icon>
 </button>
 
 <p></p>
-
 <div>
   <span>snack</span>
 </div>
-

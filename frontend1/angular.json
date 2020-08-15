@@ -19,7 +19,10 @@
           "options": {
             "deployUrl": "/angular/",
             "outputPath": "../backend/angular/static",
-            "index": "src/index.html",
+            "index": {
+              "input": "src/index.html",
+              "output": "../templates/index.html"
+            },
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
