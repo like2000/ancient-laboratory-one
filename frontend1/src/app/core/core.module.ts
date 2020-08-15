@@ -13,6 +13,7 @@ import {CommonModule} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {AlbumCardsService} from './album/album-cards.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -22,17 +23,18 @@ import {HttpClientModule} from '@angular/common/http';
     HomeDialogComponent,
     AlbumFilesComponent,
   ],
-  imports: [
-    MatIconModule,
-    MatInputModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatCardModule,
-    CommonModule,
-    MatButtonModule,
-    HttpClientModule,
-  ],
+    imports: [
+        MatIconModule,
+        MatInputModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatGridListModule,
+        MatCardModule,
+        CommonModule,
+        MatButtonModule,
+        HttpClientModule,
+        FormsModule,
+    ],
   providers: [AlbumCardsService],
   bootstrap: []
 })

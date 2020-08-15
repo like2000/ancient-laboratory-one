@@ -6,8 +6,10 @@
 //$app-accent:  mat-palette($mat-amber, A200, A100, A400);
 //$app-primary: mat-palette($mat-green, 800, 500, 900);
 //$app-accent: mat-palette($mat-red, A700, A100, A200);
-$app-primary: mat-palette($mat-indigo);
-$app-accent: mat-palette($mat-pink, A200, A100, A400);
+//$app-primary: mat-palette($mat-indigo);
+//$app-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-primary: mat-palette($mat-teal, 800);
+$app-accent: mat-palette($mat-deep-orange, A200, A100, A400);
 $app-theme: mat-light-theme($app-primary, $app-accent);
 
 @mixin mix-app-theme($app-theme) {
@@ -25,8 +27,8 @@ $app-theme: mat-light-theme($app-primary, $app-accent);
   }
 
   .mat-border-primary {
-    border-left: solid 10px mat-color($primary);
-    border-right: solid 10px mat-color($primary);
+    border-left: solid 8px mat-color($primary);
+    border-right: solid 8px mat-color($primary);
   }
 }
 

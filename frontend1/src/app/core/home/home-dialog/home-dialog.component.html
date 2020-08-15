@@ -1,14 +1,21 @@
 <h2 mat-dialog-title>Lab entry</h2>
 <mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Input</mat-label>
-    <label>
-      <input matInput>
-    </label>
-  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <label>
+        <input matInput>
+      </label>
+    </mat-form-field>
+  </div>
+  <div>
+    <input #fileInput hidden="true" type="file" onclick="this.value=null" (change)="fileChanged($event)">
+    <button mat-raised-button color="primary" (click)="fileInput.click()">Upload file
+    </button>
+  </div>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-raised-button color="primary">Save</button>
-  <button mat-raised-button>Cancel</button>
+  <button mat-raised-button color="primary" (click)="readDialog()">Save</button>
+  <button mat-raised-button (click)="close()">Cancel</button>
 </mat-dialog-actions>

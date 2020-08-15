@@ -9,6 +9,10 @@ import {HomeDialogComponent} from './home-dialog/home-dialog.component';
 })
 export class HomeComponent implements OnInit {
 
+  id: number;
+  url: string;
+  description: string;
+
   constructor(private dialog: MatDialog) {
   }
 
@@ -16,6 +20,14 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(HomeDialogComponent);
+    const dialogRef = this.dialog.open(HomeDialogComponent, {
+      width: '300px',
+      data: {id: 1, url: '1234.png', description: 'Hello man!'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Closed the dialog - result: ' + result);
+      this.url = result;
+    });
   }
 }
