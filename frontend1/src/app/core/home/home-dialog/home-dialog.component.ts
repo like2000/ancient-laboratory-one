@@ -1,5 +1,6 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {HomeFilesService} from '../home-files.service';
 
 export interface HomeDialogData {
   id: number;
@@ -13,10 +14,14 @@ export interface HomeDialogData {
   styleUrls: ['./home-dialog.component.scss']
 })
 export class HomeDialogComponent implements OnInit {
-  private fileData: any;
 
-  constructor(public dialogRef: MatDialogRef<HomeDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: HomeDialogData) {
+  constructor(private service: HomeFilesService,
+              public dialogRef: MatDialogRef<HomeDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: HomeDialogData) {
   }
+
+  private fileData: any;
+  @ViewChild('fileInput') fileInput;
 
   ngOnInit(): void {
   }
@@ -30,6 +35,20 @@ export class HomeDialogComponent implements OnInit {
     this.data.url = this.fileData.name;
     console.log(this.fileData);
     console.log(this.data);
+  }
+
+  uploadFile() {
+    const files: FileList = this.fileInput.nativeElement.files;
+    if (files.length === 0) {
+      return;
+    }
+    return this.service.sendFiles(files).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error => {
+        console.log(error);
+      }));
   }
 
   close(): void {

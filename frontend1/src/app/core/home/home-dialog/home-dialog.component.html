@@ -9,8 +9,11 @@
     </mat-form-field>
   </div>
   <div>
+    <button mat-raised-button color="primary" (click)="uploadFile()">Upload
+    </button>
+
     <input #fileInput hidden="true" type="file" onclick="this.value=null" (change)="fileChanged($event)">
-    <button mat-raised-button color="primary" (click)="fileInput.click()">Upload file
+    <button mat-raised-button (click)="fileInput.click()">Select file
     </button>
   </div>
 </mat-dialog-content>
