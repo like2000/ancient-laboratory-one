@@ -1510,9 +1510,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "API_URL", function () {
       return API_URL;
-    });
+    }); // export const API_URL = 'http://localhost:5000';
 
-    var API_URL = 'http://localhost:5000';
+
+    var API_URL = 'https://ancient-laboratory.herokuapp.com';
     /***/
   },
 
