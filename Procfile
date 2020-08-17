@@ -1,1 +1,1 @@
-web: gunicorn -w 4 "wsgi:app" -b https://ancient-laboratory.herokuapp.com
+web: gunicorn -w 4 "wsgi:app"

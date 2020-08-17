@@ -1513,7 +1513,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }); // export const API_URL = 'http://localhost:5000';
 
 
-    var API_URL = 'https://ancient-laboratory.herokuapp.com';
+    var API_URL = 'https://ancient-laboratory.herokuapp.com:443';
     /***/
   },
 
