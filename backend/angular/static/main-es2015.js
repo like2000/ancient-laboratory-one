@@ -769,7 +769,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_URL", function() { return API_URL; });
 // export const API_URL = 'http://localhost:5000';
-const API_URL = 'https://ancient-laboratory.herokuapp.com:80';
+const API_URL = 'https://ancient-laboratory.herokuapp.com';
 
 
 /***/ }),

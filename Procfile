@@ -1,1 +1,1 @@
-web: gunicorn -w 4 "wsgi:app" -b https://ancient-laboratory.herokuapp.com/#/album
+web: gunicorn -w 4 "wsgi:app" -b ancient-laboratory.herokuapp.com:443
