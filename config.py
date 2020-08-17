@@ -13,6 +13,8 @@ class Config:
     """Set Flask configuration variables from .env file."""
 
     # General Flask Config
+    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    UPLOAD_FOLDER = basedir + '/backend/files'
     SECRET_KEY = environ.get('SECRET_KEY')
     FLASK_ENV = environ.get('FLASK_ENV')
     FLASK_APP = 'wsgi.py'
@@ -26,6 +28,8 @@ class Config:
 
 class LocalConfig:
     # General Flask Config
+    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    UPLOAD_FOLDER = basedir + '/backend/files'
     SECRET_KEY = environ.get('SECRET_KEY')
     FLASK_ENV = environ.get('FLASK_ENV')
     FLASK_APP = 'wsgi.py'

@@ -1,5 +1,5 @@
 import pathlib
-from flask import request
+from flask import request, app
 from werkzeug.utils import secure_filename
 
 from backend.files import blueprint
@@ -25,7 +25,7 @@ def upload():
     if file:  # and allowed_file(file.filename):
         print("hello")
         filename = secure_filename(file.filename)
-        file.save(filename)
+        file.save(f'backend/files/{filename}')
         return ""
 
     return ""
