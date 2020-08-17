@@ -1,5 +1,6 @@
 import pathlib
 from flask import request, app
+from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 
 from backend.files import blueprint
@@ -11,6 +12,7 @@ def index():
 
 
 @blueprint.route('/upload', methods=['GET', 'POST'])
+@cross_origin()
 def upload():
     print(f"Received in flask: {request.files}")
 
