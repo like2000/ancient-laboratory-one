@@ -18,6 +18,7 @@ def register_blueprints(server: Flask):
 
 def create_app():
     server = Flask(__name__)
+    server.config['CORS_HEADERS'] = 'Content-Type'
     server.config.from_object('config.LocalConfig')
 
     with server.app_context():

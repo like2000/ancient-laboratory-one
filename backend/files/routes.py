@@ -1,5 +1,4 @@
-import pathlib
-from flask import request, app
+from flask import request
 from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 
