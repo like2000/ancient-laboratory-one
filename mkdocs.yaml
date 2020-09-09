@@ -1,0 +1,137 @@
+site_name: CERN Beam Performance Tracking for the LHC Injectors
+site_description: CERN Beam Performance Tracking
+site_author: V. Baggiolini, A. Huschauer, K. Li
+site_url: https://cern.ch/acc-bpt
+
+repo_name: GitLab
+repo_url: https://gitlab.cern.ch/vbaggiol/acc-bpt
+
+markdown_extensions:
+    - pymdownx.arithmatex
+    - pymdownx.extra
+    - pymdownx.magiclink
+    - pymdownx.tilde
+    - pymdownx.tasklist
+    - pymdownx.smartsymbols
+    - pymdownx.mark
+    - pymdownx.details
+    - admonition
+
+docs_dir: acc_bpt
+
+site_dir: {{ build_dir }}
+
+extra_css:
+  - '_stylesheets/extra.css'
+site_name: CERN Beam Performance Tracking for the LHC Injectors
+site_description: CERN Beam Performance Tracking
+site_author: V. Baggiolini, A. Huschauer, K. Li
+site_url: https://cern.ch/acc-bpt
+
+repo_name: GitLab
+repo_url: https://gitlab.cern.ch/vbaggiol/acc-bpt
+
+markdown_extensions:
+    - pymdownx.arithmatex
+    - pymdownx.extra
+    - pymdownx.magiclink
+    - pymdownx.tilde
+    - pymdownx.tasklist
+    - pymdownx.smartsymbols
+    - pymdownx.mark
+    - pymdownx.details
+    - admonition
+
+docs_dir: acc_bpt
+
+site_dir: {{ build_dir }}
+
+extra_css:
+  - '_stylesheets/extra.css'
+
+theme:
+    name: 'material'
+    features:
+      - tabs
+    logo: _images/CERN_icon.png
+    custom_dir: 'theme'
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+nav:
+    - Home: index.md
+    - SPS:
+        - General: sps/index.md
+        {% for b in accs.loc['sps'].beams.index -%}
+        - {{ b.upper() }}: sps/{{ b }}/index.md
+        {% endfor %}
+    - PS:
+        - General: ps/index.md
+        {% for b in accs.loc['ps'].beams.index -%}
+        - {{ b.upper() }}: ps/{{ b }}/index.md
+        {% endfor %}
+    - PSB:
+        - General: psb/index.md
+        {% for b in accs.loc['psb'].beams.index -%}
+        - {{ b.upper() }}: psb/{{ b }}/index.md
+        {% endfor %}
+    - LEIR:
+        - General: leir/index.md
+        {% for b in accs.loc['leir'].beams.index -%}
+        - {{ b.upper() }}: leir/{{ b }}/index.md
+        {% endfor %}
+    - Linac3:
+        - General: linac3/index.md
+    - Linac4:
+        - General: linac4/index.md
+    - Beams:
+        - General: beams/index.md
+        {% for b in accs.loc['beams'].beams.index -%}
+        - {{ b.upper() }}: beams/{{ b }}/index.md
+        {% endfor %}
+
+copyright: Last modification {{ date }}
+theme:
+    name: 'material'
+    features:
+      - tabs
+    logo: _images/CERN_icon.png
+    custom_dir: 'theme'
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+nav:
+    - Home: index.md
+    - SPS:
+        - General: sps/index.md
+        {% for b in accs.loc['sps'].beams.index -%}
+        - {{ b.upper() }}: sps/{{ b }}/index.md
+        {% endfor %}
+    - PS:
+        - General: ps/index.md
+        {% for b in accs.loc['ps'].beams.index -%}
+        - {{ b.upper() }}: ps/{{ b }}/index.md
+        {% endfor %}
+    - PSB:
+        - General: psb/index.md
+        {% for b in accs.loc['psb'].beams.index -%}
+        - {{ b.upper() }}: psb/{{ b }}/index.md
+        {% endfor %}
+    - LEIR:
+        - General: leir/index.md
+        {% for b in accs.loc['leir'].beams.index -%}
+        - {{ b.upper() }}: leir/{{ b }}/index.md
+        {% endfor %}
+    - Linac3:
+        - General: linac3/index.md
+    - Linac4:
+        - General: linac4/index.md
+    - Beams:
+        - General: beams/index.md
+        {% for b in accs.loc['beams'].beams.index -%}
+        - {{ b.upper() }}: beams/{{ b }}/index.md
+        {% endfor %}
+
+copyright: Last modification {{ date }}

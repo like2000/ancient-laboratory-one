@@ -3,8 +3,32 @@
 <mat-grid-list cols="3" rowHeight="16:9">
   <mat-grid-tile *ngFor="let i of range">
     <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)" [ngClass]="selected[i]? 'active' : 'inactive'"
-              style="height: 90%; width: 90%;">
+              style="height: 90%; width: 90%; display: flex; align-content: center;">
       {{i}}
+
+      <div style="width:60%; margin: auto;">
+        <table>
+          <tr>
+            <td>Date:</td>
+            <td>xxx</td>
+            <td>Time:</td>
+            <td>xxx</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="width:60%; margin: auto;">
+        <table>
+          <tr>
+            <td>Set reps:</td>
+            <td>xxx</td>
+          </tr>
+          <tr>
+            <td>Total reps:</td>
+            <td>xxx</td>
+          </tr>
+        </table>
+      </div>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
@@ -18,7 +42,7 @@
 </button>
 
 <button mat-fab (click)="deleteData()" style="position: absolute; right: 60px; bottom: 60px;">
-  <mat-icon>delete_circle</mat-icon>
+  <mat-icon>delete</mat-icon>
 </button>
 
 <!--<app-album-files></app-album-files>-->

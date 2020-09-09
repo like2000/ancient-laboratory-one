@@ -6,10 +6,13 @@
   </button>
 
   <span style="padding: 0 40px;">Ancient Laboratory</span>
+</mat-toolbar>
 
+<nav mat-tab-nav-bar>
+  <!--  fx backgroundColor="primary">-->
   <a mat-button routerLink="home" routerLinkActive="active">Home</a>
   <a mat-button routerLink="album" routerLinkActive="active">Album</a>
-</mat-toolbar>
+</nav>
 
 <div class="w3-container mat-border-primary">
   <router-outlet></router-outlet>

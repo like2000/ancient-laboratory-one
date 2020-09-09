@@ -22,11 +22,11 @@ export class AlbumComponent implements OnInit {
 
 
   toggleSelected(i): void {
-    // this.selected[i] = !this.selected[i];
-    for (let k = 0; k < 6; k++) {
-      this.selected[k] = false;
-    }
-    this.selected[i] = true;
+    this.selected[i] = !this.selected[i];
+    // for (let k = 0; k < 6; k++) {
+    //   this.selected[k] = false;
+    // }
+    // this.selected[i] = true;
   }
 
   addData(): void {

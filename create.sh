@@ -1,6 +1,7 @@
 #!/bin/bash
 
 npm install -g @angular/cli@latest
+npm install -g @angular/material@latest
 
 ng new --help
 
