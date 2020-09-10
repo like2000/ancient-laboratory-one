@@ -28,12 +28,13 @@ def get():
         'id': 1,
         'url': '1234.jpg',
         'name': 'card 1',
-        'active': 'false',
+        'active': False,
         'comment': 'just another test',
-        'description': 'some descriptive text now here'
+        'description': 'some descriptive text now here',
+        'date': pd.to_datetime('now').strftime("%d.%m.%Y"),
+        'time': pd.to_datetime('now').strftime("%H:%M:%S"),
     }
-    print(data)
-    print(global_data)
+
     return jsonify([data])
 
 

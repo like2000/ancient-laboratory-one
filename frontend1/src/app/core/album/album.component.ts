@@ -34,7 +34,7 @@ export class AlbumComponent implements OnInit {
 
 
   toggleSelected(i): void {
-    // this.albumCards[i].active = !this.albumCards[i].active;
+    this.albumCards[i].active = !this.albumCards[i].active;
     this.selected[i] = !this.selected[i];
     // for (let k = 0; k < 6; k++) {
     //   this.selected[k] = false;

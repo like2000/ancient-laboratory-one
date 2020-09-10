@@ -3,17 +3,17 @@
 <mat-grid-list cols="3" rowHeight="16:9">
   <mat-grid-tile *ngFor="let card of albumCards; let i = index;">
     <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)"
-              [ngClass]="selected[i]? 'active' : 'inactive'"
+              [ngClass]="albumCards[i].active? 'active' : 'inactive'"
               style="height: 90%; width: 90%; display: flex; align-content: center;">
       {{i}}
 
       <div style="width:60%; margin: auto;">
         <table>
           <tr>
-            <td>Date:{{i}}</td>
-            <td>xxx</td>
+            <td>Date:</td>
+            <td>{{albumCards[i].date}}</td>
             <td>Time:</td>
-            <td>xxx</td>
+            <td>{{albumCards[i].time}}</td>
           </tr>
         </table>
       </div>
@@ -22,11 +22,11 @@
         <table>
           <tr>
             <td>Set reps:</td>
-            <td>xxx</td>
+            <td>{{albumCards[i].comment}}</td>
           </tr>
           <tr>
             <td>Total reps:</td>
-            <td>xxx</td>
+            <td>{{albumCards[i].description}}</td>
           </tr>
         </table>
       </div>
