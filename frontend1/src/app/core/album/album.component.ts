@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AlbumCardsService} from './album-cards.service';
+import {AlbumCards} from './album-cards';
 
 @Component({
   selector: 'app-album',
@@ -8,13 +9,24 @@ import {AlbumCardsService} from './album-cards.service';
 })
 export class AlbumComponent implements OnInit {
 
-  constructor(private service: AlbumCardsService) {
-    this.selected = [false, false, false, false, false];
-    this.range = [1, 2, 3, 4, 5];
-  }
-
+  albumCards: Array<AlbumCards>;
   selected: Array<boolean>;
   range: Array<number>;
+
+  constructor(private service: AlbumCardsService) {
+    this.albumCards = [];
+
+    for (let i = 0; i < 5; i++) {
+      this.getData();
+    }
+
+    this.range = Array.from(this.albumCards.keys());
+    this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
+
+    console.log(this.range);
+    console.log(this.selected);
+    console.log(this.albumCards);
+  }
 
 
   ngOnInit(): void {
@@ -22,6 +34,7 @@ export class AlbumComponent implements OnInit {
 
 
   toggleSelected(i): void {
+    // this.albumCards[i].active = !this.albumCards[i].active;
     this.selected[i] = !this.selected[i];
     // for (let k = 0; k < 6; k++) {
     //   this.selected[k] = false;
@@ -43,7 +56,9 @@ export class AlbumComponent implements OnInit {
   getData(): void {
     this.service.getCards().subscribe(
       (response) => {
-        console.log(response);
+        console.log('Add cards in album component.');
+        this.albumCards = this.albumCards.concat(response);
+        console.log(this.albumCards);
       },
       (error) => {
         console.log(error);

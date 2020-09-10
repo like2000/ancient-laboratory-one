@@ -1,15 +1,16 @@
 <p>album works!</p>
 
 <mat-grid-list cols="3" rowHeight="16:9">
-  <mat-grid-tile *ngFor="let i of range">
-    <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)" [ngClass]="selected[i]? 'active' : 'inactive'"
+  <mat-grid-tile *ngFor="let card of albumCards; let i = index;">
+    <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)"
+              [ngClass]="selected[i]? 'active' : 'inactive'"
               style="height: 90%; width: 90%; display: flex; align-content: center;">
       {{i}}
 
       <div style="width:60%; margin: auto;">
         <table>
           <tr>
-            <td>Date:</td>
+            <td>Date:{{i}}</td>
             <td>xxx</td>
             <td>Time:</td>
             <td>xxx</td>

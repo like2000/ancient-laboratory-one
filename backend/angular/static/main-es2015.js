@@ -228,13 +228,16 @@ class AlbumCardsService {
         this.url = _env__WEBPACK_IMPORTED_MODULE_1__["API_URL"] + '/chronicles';
     }
     getCards() {
+        const response = this.http.get(this.url + '/get');
+        console.log('In get cards');
         return this.http.get(this.url + '/get');
     }
     deleteCards() {
         return this.http.delete(this.url + '/delete');
     }
     addCards() {
-        const card = new _album_cards__WEBPACK_IMPORTED_MODULE_2__["AlbumCards"](1, '1234.jpg', 'johanni', 'a comment', 'some text');
+        const card = new _album_cards__WEBPACK_IMPORTED_MODULE_2__["AlbumCards"](1, '1234.jpg', 'johanni', false, 'a new comment', 'some text');
+        console.log('In add cards');
         return this.http.post(this.url + '/add', card);
     }
 }
@@ -261,10 +264,11 @@ AlbumCardsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlbumCards", function() { return AlbumCards; });
 class AlbumCards {
-    constructor(id, url, name, comment, description) {
+    constructor(id, url, name, active, comment, description) {
         this.id = id;
         this.url = url;
         this.name = name;
+        this.active = active;
         this.comment = comment;
         this.description = description;
     }
@@ -335,16 +339,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AlbumComponent_mat_grid_tile_3_Template(rf, ctx) { if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-grid-tile");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AlbumComponent_mat_grid_tile_3_Template_mat_card_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const i_r1 = ctx.$implicit; const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r2.toggleSelected(i_r1); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AlbumComponent_mat_grid_tile_3_Template_mat_card_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const i_r2 = ctx.index; const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.toggleSelected(i_r2); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "table");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Date:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "xxx");
@@ -381,22 +385,32 @@ function AlbumComponent_mat_grid_tile_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r1 = ctx.$implicit;
+    const i_r2 = ctx.index;
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.selected[i_r1] ? "active" : "inactive");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.selected[i_r2] ? "active" : "inactive");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r1, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r2, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Date:", i_r2, "");
 } }
 class AlbumComponent {
     constructor(service) {
         this.service = service;
-        this.selected = [false, false, false, false, false];
-        this.range = [1, 2, 3, 4, 5];
+        this.albumCards = [];
+        for (let i = 0; i < 5; i++) {
+            this.getData();
+        }
+        this.range = Array.from(this.albumCards.keys());
+        this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
+        console.log(this.range);
+        console.log(this.selected);
+        console.log(this.albumCards);
     }
     ngOnInit() {
     }
     toggleSelected(i) {
+        // this.albumCards[i].active = !this.albumCards[i].active;
         this.selected[i] = !this.selected[i];
         // for (let k = 0; k < 6; k++) {
         //   this.selected[k] = false;
@@ -412,7 +426,9 @@ class AlbumComponent {
     }
     getData() {
         this.service.getCards().subscribe((response) => {
-            console.log(response);
+            console.log('Add cards in album component.');
+            this.albumCards = this.albumCards.concat(response);
+            console.log(this.albumCards);
         }, (error) => {
             console.log(error);
         });
@@ -431,7 +447,7 @@ AlbumComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "album works!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-grid-list", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AlbumComponent_mat_grid_tile_3_Template, 26, 2, "mat-grid-tile", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AlbumComponent_mat_grid_tile_3_Template, 26, 3, "mat-grid-tile", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AlbumComponent_Template_button_click_4_listener() { return ctx.addData(); });
@@ -453,7 +469,7 @@ AlbumComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.range);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.albumCards);
     } }, directives: [_angular_material_grid_list__WEBPACK_IMPORTED_MODULE_2__["MatGridList"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_2__["MatGridTile"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"]], styles: [".active[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 4px 4px rebeccapurple;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2tsaS93b3Jrc3BhY2UvYW5jaWVudC1sYWJvcmF0b3J5LW9uZS9mcm9udGVuZDEvc3JjL2FwcC9jb3JlL2FsYnVtL2FsYnVtLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb3JlL2FsYnVtL2FsYnVtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsdUNBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvYWxidW0vYWxidW0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWN0aXZlIHtcbiAgYm94LXNoYWRvdzogMCA0cHggNHB4IDRweCByZWJlY2NhcHVycGxlO1xuICAvL2JhY2tncm91bmQ6IHJlYmVjY2FwdXJwbGU7XG59XG5cbi8vLm1hdC1jYXJkOm5vdChbY2xhc3MqPW1hdC1lbGV2YXRpb24tejRdKSB7XG4vLyAgYm94LXNoYWRvdzogMCAycHggMXB4IC0xcHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cblxuLy8ubWF0LWNhcmQge1xuLy8gIGJveC1zaGFkb3c6IDAgMnB4IDJweCAycHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cbiIsIi5hY3RpdmUge1xuICBib3gtc2hhZG93OiAwIDRweCA0cHggNHB4IHJlYmVjY2FwdXJwbGU7XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AlbumComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -808,8 +824,8 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_URL", function() { return API_URL; });
-// export const API_URL = 'http://localhost:5000';
-const API_URL = 'https://ancient-laboratory.herokuapp.com:443';
+const API_URL = 'http://localhost:5000';
+// export const API_URL = 'https://ancient-laboratory.herokuapp.com:443';
 
 
 /***/ }),

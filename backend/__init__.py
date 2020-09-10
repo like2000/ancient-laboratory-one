@@ -11,10 +11,10 @@ def register_extensions(server: Flask):
 
 
 def register_blueprints(server: Flask):
-    for module_name in ('angular', 'album', 'chronicles', 'filesbase'):
+    for module_name in ('angular', 'album', 'chronicles', 'files'):
         module = import_module(f'backend.{module_name}.routes')
-        server.register_blueprint(module.blueprint)
-        # server.register_blueprint(module.blueprint, url_prefix=f'/{module_name}')
+        # server.register_blueprint(module.blueprint)
+        server.register_blueprint(module.blueprint, url_prefix=f'/{module_name}')
 
 
 def create_app():

@@ -436,6 +436,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AlbumCardsService, [{
         key: "getCards",
         value: function getCards() {
+          var response = this.http.get(this.url + '/get');
+          console.log('In get cards');
           return this.http.get(this.url + '/get');
         }
       }, {
@@ -446,7 +448,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addCards",
         value: function addCards() {
-          var card = new _album_cards__WEBPACK_IMPORTED_MODULE_2__["AlbumCards"](1, '1234.jpg', 'johanni', 'a comment', 'some text');
+          var card = new _album_cards__WEBPACK_IMPORTED_MODULE_2__["AlbumCards"](1, '1234.jpg', 'johanni', false, 'a new comment', 'some text');
+          console.log('In add cards');
           return this.http.post(this.url + '/add', card);
         }
       }]);
@@ -501,12 +504,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return AlbumCards;
     });
 
-    var AlbumCards = function AlbumCards(id, url, name, comment, description) {
+    var AlbumCards = function AlbumCards(id, url, name, active, comment, description) {
       _classCallCheck(this, AlbumCards);
 
       this.id = id;
       this.url = url;
       this.name = name;
+      this.active = active;
       this.comment = comment;
       this.description = description;
     };
@@ -655,20 +659,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function AlbumComponent_mat_grid_tile_3_Template(rf, ctx) {
       if (rf & 1) {
-        var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-grid-tile");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card", 5);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AlbumComponent_mat_grid_tile_3_Template_mat_card_click_1_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
 
-          var i_r1 = ctx.$implicit;
+          var i_r2 = ctx.index;
 
-          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r2.toggleSelected(i_r1);
+          return ctx_r3.toggleSelected(i_r2);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -681,7 +685,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "td");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Date:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -755,17 +759,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var i_r1 = ctx.$implicit;
+        var i_r2 = ctx.index;
 
         var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.selected[i_r1] ? "active" : "inactive");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.selected[i_r2] ? "active" : "inactive");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r1, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r2, " ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Date:", i_r2, "");
       }
     }
 
@@ -774,8 +782,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AlbumComponent);
 
         this.service = service;
-        this.selected = [false, false, false, false, false];
-        this.range = [1, 2, 3, 4, 5];
+        this.albumCards = [];
+
+        for (var i = 0; i < 5; i++) {
+          this.getData();
+        }
+
+        this.range = Array.from(this.albumCards.keys());
+        this.selected = Array.apply(null, new Array(this.range.length)).map(function () {
+          return false;
+        });
+        console.log(this.range);
+        console.log(this.selected);
+        console.log(this.albumCards);
       }
 
       _createClass(AlbumComponent, [{
@@ -784,6 +803,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toggleSelected",
         value: function toggleSelected(i) {
+          // this.albumCards[i].active = !this.albumCards[i].active;
           this.selected[i] = !this.selected[i]; // for (let k = 0; k < 6; k++) {
           //   this.selected[k] = false;
           // }
@@ -801,8 +821,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getData",
         value: function getData() {
+          var _this = this;
+
           this.service.getCards().subscribe(function (response) {
-            console.log(response);
+            console.log('Add cards in album component.');
+            _this.albumCards = _this.albumCards.concat(response);
+            console.log(_this.albumCards);
           }, function (error) {
             console.log(error);
           });
@@ -841,7 +865,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-grid-list", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AlbumComponent_mat_grid_tile_3_Template, 26, 2, "mat-grid-tile", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AlbumComponent_mat_grid_tile_3_Template, 26, 3, "mat-grid-tile", 1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -891,7 +915,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.range);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.albumCards);
         }
       },
       directives: [_angular_material_grid_list__WEBPACK_IMPORTED_MODULE_2__["MatGridList"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_2__["MatGridTile"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"]],
@@ -1480,7 +1504,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog() {
-          var _this = this;
+          var _this2 = this;
 
           var dialogRef = this.dialog.open(_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_1__["HomeDialogComponent"], {
             width: '300px',
@@ -1492,7 +1516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           dialogRef.afterClosed().subscribe(function (result) {
             console.log('Closed the dialog - result: ' + result);
-            _this.url = result;
+            _this2.url = result;
           });
         }
       }]);
@@ -1588,10 +1612,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "API_URL", function () {
       return API_URL;
-    }); // export const API_URL = 'http://localhost:5000';
+    });
 
+    var API_URL = 'http://localhost:5000'; // export const API_URL = 'https://ancient-laboratory.herokuapp.com:443';
 
-    var API_URL = 'https://ancient-laboratory.herokuapp.com:443';
     /***/
   },
 

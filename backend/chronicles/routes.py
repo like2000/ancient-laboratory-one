@@ -26,12 +26,15 @@ def add():
 def get():
     data = {
         'id': 1,
+        'url': '1234.jpg',
         'name': 'card 1',
-        'comment': 'just a test',
+        'active': 'false',
+        'comment': 'just another test',
         'description': 'some descriptive text now here'
     }
+    print(data)
     print(global_data)
-    return jsonify(data)
+    return jsonify([data])
 
 
 @blueprint.route('/delete', methods=['GET', 'POST'])
