@@ -229,7 +229,6 @@ class AlbumCardsService {
     }
     getCards() {
         const response = this.http.get(this.url + '/get');
-        console.log('In get cards');
         return this.http.get(this.url + '/get');
     }
     deleteCards() {
@@ -237,7 +236,6 @@ class AlbumCardsService {
     }
     addCards() {
         const card = new _album_cards__WEBPACK_IMPORTED_MODULE_2__["AlbumCards"](1, '1234.jpg', 'johanni', '2020', '12:00', false, 'a new comment', 'some text');
-        console.log('In add cards');
         return this.http.post(this.url + '/add', card);
     }
 }
@@ -404,14 +402,14 @@ class AlbumComponent {
     constructor(service) {
         this.service = service;
         this.albumCards = [];
-        for (let i = 0; i < 5; i++) {
-            this.getData();
-        }
-        this.range = Array.from(this.albumCards.keys());
-        this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
-        console.log(this.range);
-        console.log(this.selected);
-        console.log(this.albumCards);
+        // for (let i = 0; i < 5; i++) {
+        //   this.getData();
+        // }
+        // this.range = Array.from(this.albumCards.keys());
+        // this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
+        // console.log(this.range);
+        // console.log(this.selected);
+        // console.log(this.albumCards);
     }
     ngOnInit() {
     }
@@ -429,12 +427,13 @@ class AlbumComponent {
         }, (error) => {
             console.log(error);
         });
+        this.getData();
     }
     getData() {
         this.service.getCards().subscribe((response) => {
-            console.log('Add cards in album component.');
-            this.albumCards = this.albumCards.concat(response);
-            console.log(this.albumCards);
+            // this.albumCards = this.albumCards.concat(response);
+            // console.log(this.albumCards);
+            this.albumCards = response;
         }, (error) => {
             console.log(error);
         });

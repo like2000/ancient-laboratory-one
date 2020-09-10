@@ -16,16 +16,16 @@ export class AlbumComponent implements OnInit {
   constructor(private service: AlbumCardsService) {
     this.albumCards = [];
 
-    for (let i = 0; i < 5; i++) {
-      this.getData();
-    }
+    // for (let i = 0; i < 5; i++) {
+    //   this.getData();
+    // }
 
-    this.range = Array.from(this.albumCards.keys());
-    this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
+    // this.range = Array.from(this.albumCards.keys());
+    // this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
 
-    console.log(this.range);
-    console.log(this.selected);
-    console.log(this.albumCards);
+    // console.log(this.range);
+    // console.log(this.selected);
+    // console.log(this.albumCards);
   }
 
 
@@ -51,14 +51,15 @@ export class AlbumComponent implements OnInit {
         console.log(error);
       }
     );
+    this.getData();
   }
 
   getData(): void {
     this.service.getCards().subscribe(
       (response) => {
-        console.log('Add cards in album component.');
-        this.albumCards = this.albumCards.concat(response);
-        console.log(this.albumCards);
+        // this.albumCards = this.albumCards.concat(response);
+        // console.log(this.albumCards);
+        this.albumCards = response;
       },
       (error) => {
         console.log(error);
