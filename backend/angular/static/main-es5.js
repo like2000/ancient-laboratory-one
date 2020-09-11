@@ -211,7 +211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-root"]],
       decls: 15,
       vars: 0,
-      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", ""], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
+      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", "", 1, "mat-border-primary"], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -502,7 +502,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 33,
       vars: 5,
-      consts: [[1, "mat-elevation-z4", 2, "height", "90%", "width", "90%", "display", "flex", "align-content", "center", 3, "ngClass", "click"], [2, "width", "60%", "margin", "auto"], ["mat-fab", "", 2, "position", "relative", "left", "80%", "top", "80%"], ["mat-fab", "", 2, "position", "relative", "left", "85%", "top", "80%"], ["mat-fab", "", 2, "position", "relative", "left", "90%", "top", "80%"]],
+      consts: [[1, "mat-elevation-z4", 2, "margin", "auto", "height", "90%", "width", "90%", "display", "flex", "align-content", "center", 3, "ngClass", "click"], [2, "width", "60%", "margin", "auto"], ["mat-fab", "", 2, "position", "relative", "left", "80%", "top", "80%"], ["mat-fab", "", 2, "position", "relative", "left", "85%", "top", "80%"], ["mat-fab", "", 2, "position", "relative", "left", "90%", "top", "80%"]],
       template: function AlbumCardComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 0);
@@ -641,7 +641,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCard"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvYWxidW0vYWxidW0tY2FyZC9hbGJ1bS1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */"]
+      styles: [".active[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 4px 4px rebeccapurple;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2tsaS93b3Jrc3BhY2UvYW5jaWVudC1sYWJvcmF0b3J5LW9uZS9mcm9udGVuZDEvc3JjL2FwcC9jb3JlL2FsYnVtL2FsYnVtLWNhcmQvYWxidW0tY2FyZC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29yZS9hbGJ1bS9hbGJ1bS1jYXJkL2FsYnVtLWNhcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx1Q0FBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvY29yZS9hbGJ1bS9hbGJ1bS1jYXJkL2FsYnVtLWNhcmQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWN0aXZlIHtcbiAgYm94LXNoYWRvdzogMCA0cHggNHB4IDRweCByZWJlY2NhcHVycGxlO1xuICAvL2JhY2tncm91bmQ6IHJlYmVjY2FwdXJwbGU7XG59XG5cbi8vLm1hdC1jYXJkOm5vdChbY2xhc3MqPW1hdC1lbGV2YXRpb24tejRdKSB7XG4vLyAgYm94LXNoYWRvdzogMCAycHggMXB4IC0xcHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cblxuLy8ubWF0LWNhcmQge1xuLy8gIGJveC1zaGFkb3c6IDAgMnB4IDJweCAycHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cbiIsIi5hY3RpdmUge1xuICBib3gtc2hhZG93OiAwIDRweCA0cHggNHB4IHJlYmVjY2FwdXJwbGU7XG59Il19 */"]
     });
     /*@__PURE__*/
 
@@ -1247,7 +1247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-album"]],
       decls: 11,
       vars: 1,
-      consts: [["cols", "3", "rowHeight", "16:9"], [4, "ngFor", "ngForOf"], ["mat-fab", "", 2, "position", "fixed", "right", "260px", "bottom", "60px", 3, "click"], ["mat-fab", "", 2, "position", "fixed", "right", "160px", "bottom", "60px", 3, "click"], ["mat-fab", "", 2, "position", "fixed", "right", "60px", "bottom", "60px", 3, "click"], [2, "width", "100%", "height", "100%", 3, "albumCard"]],
+      consts: [["cols", "3", "rowHeight", "16:9"], [4, "ngFor", "ngForOf"], ["mat-fab", "", 2, "position", "fixed", "right", "260px", "bottom", "60px", 3, "click"], ["mat-fab", "", 2, "position", "fixed", "right", "160px", "bottom", "60px", 3, "click"], ["mat-fab", "", 2, "position", "fixed", "right", "60px", "bottom", "60px", 3, "click"], [2, "width", "100%", "height", "100%", "display", "flex", 3, "albumCard"]],
       template: function AlbumComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-grid-list", 0);
@@ -1306,7 +1306,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_material_grid_list__WEBPACK_IMPORTED_MODULE_3__["MatGridList"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_3__["MatGridTile"], _album_card_album_card_component__WEBPACK_IMPORTED_MODULE_7__["AlbumCardComponent"]],
-      styles: [".active[_ngcontent-%COMP%] {\n  box-shadow: 0 4px 4px 4px rebeccapurple;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2tsaS93b3Jrc3BhY2UvYW5jaWVudC1sYWJvcmF0b3J5LW9uZS9mcm9udGVuZDEvc3JjL2FwcC9jb3JlL2FsYnVtL2FsYnVtLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb3JlL2FsYnVtL2FsYnVtLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsdUNBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvYWxidW0vYWxidW0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWN0aXZlIHtcbiAgYm94LXNoYWRvdzogMCA0cHggNHB4IDRweCByZWJlY2NhcHVycGxlO1xuICAvL2JhY2tncm91bmQ6IHJlYmVjY2FwdXJwbGU7XG59XG5cbi8vLm1hdC1jYXJkOm5vdChbY2xhc3MqPW1hdC1lbGV2YXRpb24tejRdKSB7XG4vLyAgYm94LXNoYWRvdzogMCAycHggMXB4IC0xcHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cblxuLy8ubWF0LWNhcmQge1xuLy8gIGJveC1zaGFkb3c6IDAgMnB4IDJweCAycHggcmdiYSgyMDAsIDEwMCwgMTAwLCAxKSxcbi8vICAwIDFweCAxcHggMCByZ2JhKDIwMCwgMTAwLCAxMDAsIDEpLFxuLy8gIDAgMXB4IDNweCAwIHJnYmEoMjAwLCAxMDAsIDEwMCwgMSk7XG4vL31cbiIsIi5hY3RpdmUge1xuICBib3gtc2hhZG93OiAwIDRweCA0cHggNHB4IHJlYmVjY2FwdXJwbGU7XG59Il19 */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvYWxidW0vYWxidW0uY29tcG9uZW50LnNjc3MifQ== */"]
     });
     /*@__PURE__*/
 
@@ -2055,9 +2055,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-zen"]],
       decls: 2,
       vars: 0,
+      consts: [[2, "position", "absolute", "top", "0", "right", "0", "bottom", "0", "left", "0", "background", "gainsboro"]],
       template: function ZenComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "zen works!");
 
