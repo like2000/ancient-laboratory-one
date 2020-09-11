@@ -11,5 +11,6 @@ cd $1
 ng add @angular/material --defaults
 
 ng generate module core
+ng generate component core/zen
 ng generate component core/home
 ng generate component core/album

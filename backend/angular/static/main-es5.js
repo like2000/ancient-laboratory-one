@@ -78,8 +78,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _core_album_album_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./core/album/album.component */
     "./src/app/core/album/album.component.ts");
+    /* harmony import */
+
+
+    var _core_zen_zen_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./core/zen/zen.component */
+    "./src/app/core/zen/zen.component.ts");
 
     var routes = [{
+      path: 'zen',
+      component: _core_zen_zen_component__WEBPACK_IMPORTED_MODULE_4__["ZenComponent"]
+    }, {
       path: 'home',
       component: _core_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"]
     }, {
@@ -200,9 +209,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
       selectors: [["app-root"]],
-      decls: 13,
+      decls: 15,
       vars: 0,
-      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", "", "fx", "", "backgroundColor", "primary"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
+      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", ""], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -229,21 +238,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Home");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Zen");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Album");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Home");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Album");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "router-outlet");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "router-outlet");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -1448,6 +1463,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./album/album-card/album-card.service */
     "./src/app/core/album/album-card/album-card.service.ts");
+    /* harmony import */
+
+
+    var _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    /*! ./zen/zen.component */
+    "./src/app/core/zen/zen.component.ts");
 
     var CoreModule = function CoreModule() {
       _classCallCheck(this, CoreModule);
@@ -1466,7 +1487,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoreModule, {
-        declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"]],
+        declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"]],
         imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_9__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"]]
       });
     })();
@@ -1477,7 +1498,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoreModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"]],
+          declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"]],
           imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_9__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"]],
           providers: [_album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__["AlbumCardService"]],
           bootstrap: []
@@ -1980,6 +2001,83 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return [{
           type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
         }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/core/zen/zen.component.ts":
+  /*!*******************************************!*\
+    !*** ./src/app/core/zen/zen.component.ts ***!
+    \*******************************************/
+
+  /*! exports provided: ZenComponent */
+
+  /***/
+  function srcAppCoreZenZenComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ZenComponent", function () {
+      return ZenComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var ZenComponent = /*#__PURE__*/function () {
+      function ZenComponent() {
+        _classCallCheck(this, ZenComponent);
+      }
+
+      _createClass(ZenComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return ZenComponent;
+    }();
+
+    ZenComponent.ɵfac = function ZenComponent_Factory(t) {
+      return new (t || ZenComponent)();
+    };
+
+    ZenComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: ZenComponent,
+      selectors: [["app-zen"]],
+      decls: 2,
+      vars: 0,
+      template: function ZenComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "zen works!");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      },
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvemVuL3plbi5jb21wb25lbnQuc2NzcyJ9 */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ZenComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-zen',
+          templateUrl: './zen.component.html',
+          styleUrls: ['./zen.component.scss']
+        }]
+      }], function () {
+        return [];
       }, null);
     })();
     /***/

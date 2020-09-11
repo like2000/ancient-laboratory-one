@@ -37,6 +37,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _core_home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core/home/home.component */ "./src/app/core/home/home.component.ts");
 /* harmony import */ var _core_album_album_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core/album/album.component */ "./src/app/core/album/album.component.ts");
+/* harmony import */ var _core_zen_zen_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./core/zen/zen.component */ "./src/app/core/zen/zen.component.ts");
+
 
 
 
@@ -44,6 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
+    { path: 'zen', component: _core_zen_zen_component__WEBPACK_IMPORTED_MODULE_4__["ZenComponent"] },
     { path: 'home', component: _core_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
     { path: 'album', component: _core_album_album_component__WEBPACK_IMPORTED_MODULE_3__["AlbumComponent"] },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -94,7 +97,7 @@ class AppComponent {
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 13, vars: 0, consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", "", "fx", "", "backgroundColor", "primary"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 15, vars: 0, consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", ""], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon");
@@ -107,14 +110,17 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "nav", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Home");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Zen");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Album");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Home");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Album");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_1__["MatToolbar"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__["MatIcon"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabNav"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatAnchor"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkActive"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
@@ -689,6 +695,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
 /* harmony import */ var _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./album/album-card/album-card.component */ "./src/app/core/album/album-card/album-card.component.ts");
 /* harmony import */ var _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./album/album-card/album-card.service */ "./src/app/core/album/album-card/album-card.service.ts");
+/* harmony import */ var _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./zen/zen.component */ "./src/app/core/zen/zen.component.ts");
+
 
 
 
@@ -731,7 +739,8 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
         _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"],
         _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"],
         _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"],
-        _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"]], imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
+        _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"],
+        _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"]], imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
         _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
         _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"],
         _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"],
@@ -753,6 +762,7 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"],
                     _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"],
                     _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"],
+                    _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"],
                 ],
                 imports: [
                     _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
@@ -1003,6 +1013,42 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 styleUrls: ['./home.component.scss']
             }]
     }], function () { return [{ type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/core/zen/zen.component.ts":
+/*!*******************************************!*\
+  !*** ./src/app/core/zen/zen.component.ts ***!
+  \*******************************************/
+/*! exports provided: ZenComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZenComponent", function() { return ZenComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class ZenComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+ZenComponent.ɵfac = function ZenComponent_Factory(t) { return new (t || ZenComponent)(); };
+ZenComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ZenComponent, selectors: [["app-zen"]], decls: 2, vars: 0, template: function ZenComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "zen works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvemVuL3plbi5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ZenComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-zen',
+                templateUrl: './zen.component.html',
+                styleUrls: ['./zen.component.scss']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
