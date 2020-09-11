@@ -15,8 +15,6 @@ export class AlbumCardService {
   }
 
   getCards(): Observable<AlbumCard[]> {
-    const response: Observable<AlbumCard[]> = this.http.get<AlbumCard[]>(this.url + '/get');
-
     return this.http.get<AlbumCard[]>(this.url + '/get');
   }
 
