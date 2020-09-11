@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {AlbumCardsService} from './album-cards.service';
-import {AlbumCards} from './album-cards';
+import {AlbumCardService} from './album-card/album-card.service';
+import {AlbumCard} from './album-card/album-card';
+import {HomeDialogComponent} from '../home/home-dialog/home-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
+import {AlbumDialogComponent} from './album-dialog/album-dialog.component';
+import {AlbumCardComponent} from './album-card/album-card.component';
 
 @Component({
   selector: 'app-album',
@@ -9,40 +13,37 @@ import {AlbumCards} from './album-cards';
 })
 export class AlbumComponent implements OnInit {
 
-  albumCards: Array<AlbumCards>;
-  selected: Array<boolean>;
-  range: Array<number>;
+  albumCardsList: Array<AlbumCard>;
 
-  constructor(private service: AlbumCardsService) {
-    this.albumCards = [];
+  // albumCards: Array<AlbumCardComponent>;
 
-    // for (let i = 0; i < 5; i++) {
-    //   this.getData();
-    // }
-
-    // this.range = Array.from(this.albumCards.keys());
-    // this.selected = Array.apply(null, new Array(this.range.length)).map(() => false);
-
-    // console.log(this.range);
-    // console.log(this.selected);
-    // console.log(this.albumCards);
+  constructor(private service: AlbumCardService, private dialog: MatDialog) {
+    // this.albumCards = [];
+    this.albumCardsList = [];
   }
-
 
   ngOnInit(): void {
   }
 
-
-  toggleSelected(i): void {
-    this.albumCards[i].active = !this.albumCards[i].active;
-    this.selected[i] = !this.selected[i];
-    // for (let k = 0; k < 6; k++) {
-    //   this.selected[k] = false;
-    // }
-    // this.selected[i] = true;
-  }
+  // toggleSelected(i): void {
+  //   this.albumCards[i].active = !this.albumCards[i].active;
+  //   // for (let k = 0; k < 6; k++) {
+  //   //   this.selected[k] = false;
+  //   // }
+  //   // this.selected[i] = true;
+  // }
 
   addData(): void {
+    // const dialogRef = this.dialog.open(AlbumDialogComponent, {
+    //   width: '300px',
+    //   data: {id: 1, url: '1234.png', description: 'Hello man!'}
+    // });
+    //
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('Closed the dialog - result: ' + result);
+    //   // this.url = result;
+    // });
+
     this.service.addCards().subscribe(
       (response) => {
         console.log(response);
@@ -58,8 +59,10 @@ export class AlbumComponent implements OnInit {
     this.service.getCards().subscribe(
       (response) => {
         // this.albumCards = this.albumCards.concat(response);
+        this.albumCardsList = response;
+        // this.albumCards = Array.from(response, (u) => new AlbumCardComponent().setCard(u));
         // console.log(this.albumCards);
-        this.albumCards = response;
+        // console.log(this.albumCardsList);
       },
       (error) => {
         console.log(error);

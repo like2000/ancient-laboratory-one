@@ -1,0 +1,31 @@
+<h2>New card</h2>
+
+<mat-dialog-content>
+  <mat-form-field [formGroup]="form">
+    <input matInput
+           placeholder="Course Description"
+           formControlName="description">
+    <!--    <mat-label>Sets reps</mat-label>-->
+    <!--    <mat-label>Total reps</mat-label>-->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select category"
+                formControlName="category">
+      <mat-option value="BEGINNER">
+        Beginner
+      </mat-option>
+      <mat-option value="INTERMEDIATE">
+        Intermediate
+      </mat-option>
+      <mat-option value="ADVANCED">
+        Advanced
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-stroked-button color="primary">Ok</button>
+  <button mat-stroked-button color="primary" (click)="close()">Cancel</button>
+</mat-dialog-actions>

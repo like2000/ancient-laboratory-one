@@ -11,9 +11,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
-import {AlbumCardsService} from './album/album-cards.service';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AlbumDialogComponent} from './album/album-dialog/album-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
+import {AlbumCardComponent} from './album/album-card/album-card.component';
+import {AlbumCardService} from './album/album-card/album-card.service';
 
 
 @NgModule({
@@ -22,20 +25,24 @@ import {FormsModule} from "@angular/forms";
     AlbumComponent,
     HomeDialogComponent,
     AlbumFilesComponent,
+    AlbumDialogComponent,
+    AlbumCardComponent,
   ],
-    imports: [
-        MatIconModule,
-        MatInputModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatGridListModule,
-        MatCardModule,
-        CommonModule,
-        MatButtonModule,
-        HttpClientModule,
-        FormsModule,
-    ],
-  providers: [AlbumCardsService],
+  imports: [
+    MatIconModule,
+    MatInputModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatCardModule,
+    CommonModule,
+    MatButtonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+  ],
+  providers: [AlbumCardService],
   bootstrap: []
 })
 export class CoreModule {

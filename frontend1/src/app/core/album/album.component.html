@@ -1,48 +1,47 @@
-<p>album works!</p>
-
 <mat-grid-list cols="3" rowHeight="16:9">
-  <mat-grid-tile *ngFor="let card of albumCards; let i = index;">
-    <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)"
-              [ngClass]="albumCards[i].active? 'active' : 'inactive'"
-              style="height: 90%; width: 90%; display: flex; align-content: center;">
-      {{i}}
+  <mat-grid-tile *ngFor="let card of albumCardsList; let i = index;">
+    <app-album-card [albumCard]="card" style="width: 100%; height:100%;"></app-album-card>
+    <!--    <mat-card class="mat-elevation-z4" (click)="toggleSelected(i)"-->
+    <!--              [ngClass]="albumCards[i].active? 'active' : 'inactive'"-->
+    <!--              style="height: 90%; width: 90%; display: flex; align-content: center;">-->
+    <!--      {{i}}-->
 
-      <div style="width:60%; margin: auto;">
-        <table>
-          <tr>
-            <td>Date:</td>
-            <td>{{albumCards[i].date}}</td>
-            <td>Time:</td>
-            <td>{{albumCards[i].time}}</td>
-          </tr>
-        </table>
-      </div>
+    <!--      <div style="width:60%; margin: auto;">-->
+    <!--        <table>-->
+    <!--          <tr>-->
+    <!--            <td>Date:</td>-->
+    <!--            <td>{{albumCards[i].date}}</td>-->
+    <!--            <td>Time:</td>-->
+    <!--            <td>{{albumCards[i].time}}</td>-->
+    <!--          </tr>-->
+    <!--        </table>-->
+    <!--      </div>-->
 
-      <div style="width:60%; margin: auto;">
-        <table>
-          <tr>
-            <td>Set reps:</td>
-            <td>{{albumCards[i].comment}}</td>
-          </tr>
-          <tr>
-            <td>Total reps:</td>
-            <td>{{albumCards[i].description}}</td>
-          </tr>
-        </table>
-      </div>
-    </mat-card>
+    <!--      <div style="width:60%; margin: auto;">-->
+    <!--        <table>-->
+    <!--          <tr>-->
+    <!--            <td>Set reps:</td>-->
+    <!--            <td>{{albumCards[i].comment}}</td>-->
+    <!--          </tr>-->
+    <!--          <tr>-->
+    <!--            <td>Total reps:</td>-->
+    <!--            <td>{{albumCards[i].description}}</td>-->
+    <!--          </tr>-->
+    <!--        </table>-->
+    <!--      </div>-->
+    <!--    </mat-card>-->
   </mat-grid-tile>
 </mat-grid-list>
 
-<button mat-fab (click)="addData()" style="position: absolute; right: 260px; bottom: 60px;">
+<button mat-fab (click)="addData()" style="position: fixed; right: 260px; bottom: 60px;">
   <mat-icon>add_circle</mat-icon>
 </button>
 
-<button mat-fab (click)="getData()" style="position: absolute; right: 160px; bottom: 60px;">
+<button mat-fab (click)="getData()" style="position: fixed; right: 160px; bottom: 60px;">
   <mat-icon>get_app</mat-icon>
 </button>
 
-<button mat-fab (click)="deleteData()" style="position: absolute; right: 60px; bottom: 60px;">
+<button mat-fab (click)="deleteData()" style="position: fixed; right: 60px; bottom: 60px;">
   <mat-icon>delete</mat-icon>
 </button>
 

@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {CoreModule} from './core/core.module';
 import {CommonModule} from '@angular/common';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {CommonModule} from '@angular/common';
     MatButtonModule,
     MatToolbarModule,
     CoreModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

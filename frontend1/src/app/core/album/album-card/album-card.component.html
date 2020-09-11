@@ -1,0 +1,40 @@
+<mat-card class="mat-elevation-z4" (click)="toggleSelected()"
+          [ngClass]="albumCard.active? 'active' : 'inactive'"
+          style="height: 90%; width: 90%; display: flex; align-content: center;">
+  <!--  {{i}}-->
+  <div style="width:60%; margin: auto;">
+    <table>
+      <tr>
+        <td>Date:</td>
+        <td>{{albumCard.date}}</td>
+        <td>Time:</td>
+        <td>{{albumCard.time}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="width:60%; margin: auto;">
+    <table>
+      <tr>
+        <td>Set reps:</td>
+        <td>{{albumCard.comment}}</td>
+      </tr>
+      <tr>
+        <td>Total reps:</td>
+        <td>{{albumCard.description}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <button mat-fab style="position: relative; left: 80%; top: 80%;">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+
+  <button mat-fab style="position: relative; left: 85%; top: 80%">
+    <mat-icon>get_app</mat-icon>
+  </button>
+
+  <button mat-fab style="position: relative; left: 90%; top: 80%">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
