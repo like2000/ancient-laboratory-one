@@ -3,7 +3,7 @@ from importlib import import_module
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+db: SQLAlchemy = SQLAlchemy()
 
 
 def register_extensions(server: Flask):
@@ -19,7 +19,7 @@ def register_blueprints(server: Flask):
 
 def create_app():
     server = Flask(__name__)
-    server.config['CORS_HEADERS'] = 'Content-Type'
+    # server.config['CORS_HEADERS'] = 'Content-Type'
     server.config.from_object('config.LocalConfig')
 
     with server.app_context():

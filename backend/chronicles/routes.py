@@ -4,7 +4,9 @@ import pandas as pd
 
 from flask import jsonify, request
 
+from backend import db
 from backend.chronicles import blueprint
+from backend.chronicles.models import Chronicles
 
 global_data = []
 
@@ -22,8 +24,6 @@ def add():
     data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
     global_data.append(data)
-    print(global_data)
-    # global_data.update({pd.to_datetime('now').strftime('%a %H:%M:%S'): data})
 
     return jsonify(global_data)
 
@@ -47,5 +47,8 @@ def get():
 
 
 @blueprint.route('/delete', methods=['GET', 'POST'])
-def delete(data):
-    return f"Hello from {pathlib.Path(__file__).parent.name}"
+def delete(i):
+    element = Chronicles.query.get(i)
+    db.session.delete(element)
+    db.session.commit()
+    return f"Element {i} deleted from database."

@@ -14,7 +14,7 @@ class Config:
 
     # General Flask Config
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-    UPLOAD_FOLDER = basedir + '/backend/files'
+    UPLOAD_FOLDER = basedir + '/backend/resources'
     SECRET_KEY = environ.get('SECRET_KEY')
     FLASK_ENV = environ.get('FLASK_ENV')
     FLASK_APP = 'wsgi.py'
@@ -29,13 +29,13 @@ class Config:
 class LocalConfig:
     # General Flask Config
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-    UPLOAD_FOLDER = basedir + '/backend/files'
+    UPLOAD_FOLDER = basedir + '/backend/resources'
     SECRET_KEY = environ.get('SECRET_KEY')
     FLASK_ENV = environ.get('FLASK_ENV')
     FLASK_APP = 'wsgi.py'
     FLASK_DEBUG = 1
 
     # Database
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///database/' + db_name
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///resources/' + db_name
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
