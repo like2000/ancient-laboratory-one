@@ -1185,6 +1185,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addData",
         value: function addData() {
+          var _this = this;
+
           // const dialogRef = this.dialog.open(AlbumDialogComponent, {
           //   width: '300px',
           //   data: {id: 1, url: '1234.png', description: 'Hello man!'}
@@ -1195,19 +1197,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           //   // this.url = result;
           // });
           this.service.addCards().subscribe(function (response) {
-            console.log(response);
+            _this.albumCardsList = response;
           }, function (error) {
             console.log(error);
-          });
-          this.getData();
+          }); // this.getData();
         }
       }, {
         key: "getData",
         value: function getData() {
-          var _this = this;
+          var _this2 = this;
 
           this.service.getCards().subscribe(function (response) {
-            _this.albumCardsList = response;
+            _this2.albumCardsList = response;
           }, function (error) {
             console.log(error);
           });
@@ -1905,7 +1906,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "openDialog",
         value: function openDialog() {
-          var _this2 = this;
+          var _this3 = this;
 
           var dialogRef = this.dialog.open(_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_1__["HomeDialogComponent"], {
             width: '300px',
@@ -1917,7 +1918,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           dialogRef.afterClosed().subscribe(function (result) {
             console.log('Closed the dialog - result: ' + result);
-            _this2.url = result;
+            _this3.url = result;
           });
         }
       }]);
@@ -2091,10 +2092,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "API_URL", function () {
       return API_URL;
-    });
+    }); // export const API_URL = 'http://localhost:5000';
 
-    var API_URL = 'http://localhost:5000'; // export const API_URL = 'https://ancient-laboratory.herokuapp.com:443';
 
+    var API_URL = 'https://ancient-laboratory.herokuapp.com:443';
     /***/
   },
 

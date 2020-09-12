@@ -43,13 +43,13 @@ export class AlbumComponent implements OnInit {
 
     this.service.addCards().subscribe(
       (response) => {
-        console.log(response);
+        this.albumCardsList = response;
       },
       (error) => {
         console.log(error);
       }
     );
-    this.getData();
+    // this.getData();
   }
 
   getData(): void {
