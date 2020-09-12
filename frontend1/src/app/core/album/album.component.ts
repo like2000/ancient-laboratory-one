@@ -15,10 +15,7 @@ export class AlbumComponent implements OnInit {
 
   albumCardsList: Array<AlbumCard>;
 
-  // albumCards: Array<AlbumCardComponent>;
-
   constructor(private service: AlbumCardService, private dialog: MatDialog) {
-    // this.albumCards = [];
     this.albumCardsList = [];
   }
 
@@ -58,11 +55,7 @@ export class AlbumComponent implements OnInit {
   getData(): void {
     this.service.getCards().subscribe(
       (response) => {
-        // this.albumCards = this.albumCards.concat(response);
         this.albumCardsList = response;
-        // this.albumCards = Array.from(response, (u) => new AlbumCardComponent().setCard(u));
-        // console.log(this.albumCards);
-        // console.log(this.albumCardsList);
       },
       (error) => {
         console.log(error);

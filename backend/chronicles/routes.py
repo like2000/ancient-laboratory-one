@@ -22,6 +22,7 @@ def add():
     data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
     global_data.append(data)
+    print(global_data)
     # global_data.update({pd.to_datetime('now').strftime('%a %H:%M:%S'): data})
 
     return jsonify(global_data)

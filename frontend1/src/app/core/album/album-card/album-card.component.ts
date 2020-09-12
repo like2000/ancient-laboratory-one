@@ -13,8 +13,8 @@ export class AlbumCardComponent implements OnInit {
   albumCard: AlbumCard;
 
   constructor() {
-    this.albumCard = new AlbumCard(123, '123.png', 'Henry',
-      '2020', '12:00', true, 'comment', 'description');
+    // this.albumCard = new AlbumCard(123, '123.png', 'Henry',
+    //   '2020', '12:00', true, 'comment', 'description');
   }
 
   ngOnInit(): void {
