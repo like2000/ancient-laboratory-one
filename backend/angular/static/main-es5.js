@@ -211,7 +211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-root"]],
       decls: 15,
       vars: 0,
-      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", "", 1, "mat-border-primary", 2, "z-index", "1"], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
+      consts: [["color", "primary", 1, "mat-elevation-z4", 2, "min-height", "56px", "max-height", "56px"], ["mat-icon-button", ""], [2, "padding", "0 40px"], ["mat-tab-nav-bar", "", 1, "mat-border-primary", 2, "z-index", "2"], ["mat-button", "", "routerLink", "zen", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "home", "routerLinkActive", "active", 2, "padding", "0 48px"], ["mat-button", "", "routerLink", "album", "routerLinkActive", "active", 2, "padding", "0 48px"], [1, "w3-container", "mat-border-primary"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -1174,7 +1174,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(AlbumComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {} // toggleSelected(i): void {
+        value: function ngOnInit() {
+          this.getData();
+        } // toggleSelected(i): void {
         //   this.albumCards[i].active = !this.albumCards[i].active;
         //   // for (let k = 0; k < 6; k++) {
         //   //   this.selected[k] = false;
@@ -2044,7 +2046,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-zen"]],
       decls: 2,
       vars: 0,
-      consts: [[2, "position", "absolute", "top", "0", "right", "0", "bottom", "0", "left", "0", "background", "gainsboro", "z-index", "2"]],
+      consts: [[2, "position", "absolute", "top", "0", "right", "0", "bottom", "0", "left", "0", "background", "gainsboro", "z-index", "1"]],
       template: function ZenComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 0);

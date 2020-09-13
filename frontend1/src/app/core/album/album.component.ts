@@ -20,6 +20,7 @@ export class AlbumComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getData();
   }
 
   // toggleSelected(i): void {

@@ -8,8 +8,6 @@ from backend import db
 from backend.chronicles import blueprint
 from backend.chronicles.models import Chronicles
 
-global_data = []
-
 
 @blueprint.route('/')
 def index():
@@ -38,24 +36,12 @@ def add():
     print(f"New element added: {element}")
 
     chronicles = Chronicles.query.all()
-    # global_data.append(data)
 
     return jsonify([c.serialize() for c in chronicles])  # jsonify(chronicles)
 
 
 @blueprint.route('/get', methods=['GET'])
 def get():
-    # data = {
-    #     'id': 1,
-    #     'url': '1234.jpg',
-    #     'name': 'card 1',
-    #     'active': False,
-    #     'comment': 'just another test',
-    #     'description': 'some descriptive text now here',
-    #     'date': pd.to_datetime('now').strftime("%d.%m.%Y"),
-    #     'time': pd.to_datetime('now').strftime("%H:%M:%S"),
-    # }
-
     chronicles = Chronicles.query.all()
 
     return jsonify([c.serialize() for c in chronicles])  # jsonify(chronicles)
