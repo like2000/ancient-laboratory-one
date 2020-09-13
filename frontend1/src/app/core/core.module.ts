@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {AlbumCardComponent} from './album/album-card/album-card.component';
 import {AlbumCardService} from './album/album-card/album-card.service';
 import { ZenComponent } from './zen/zen.component';
+import { JournalComponent } from './journal/journal.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ZenComponent } from './zen/zen.component';
     AlbumDialogComponent,
     AlbumCardComponent,
     ZenComponent,
+    JournalComponent,
   ],
   imports: [
     MatIconModule,
