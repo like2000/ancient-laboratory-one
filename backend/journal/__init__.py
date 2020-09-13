@@ -6,5 +6,5 @@ name = pathlib.Path(__file__).parent.name
 
 blueprint = Blueprint(
     name, __name__,
-    url_prefix='/' + name
+    url_prefix='/' + name,
 )

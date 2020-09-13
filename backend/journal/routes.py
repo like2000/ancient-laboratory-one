@@ -1,3 +1,5 @@
+from flask import jsonify
+
 from backend.journal import blueprint
 
 import pandas as pd
@@ -8,7 +10,7 @@ def index():
     return "Hello from Journal!"
 
 
-@blueprint.route('/month')
+@blueprint.route('/month', methods=['GET'])
 def month():
     year = pd.to_datetime('today').year
     month = pd.to_datetime('today').month
@@ -21,8 +23,7 @@ def month():
 
     da = pd.pivot(df, 'week', 'weekday')
 
-    return da.to_json()
+    return jsonify([{"Data": "Hello data!"}])
 
-
-if __name__ == '__main__':
-    month()
+# if __name__ == '__main__':
+#     month()
