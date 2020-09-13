@@ -50,7 +50,6 @@ export class AlbumComponent implements OnInit {
         console.log(error);
       }
     );
-    // this.getData();
   }
 
   getData(): void {

@@ -17,8 +17,9 @@ import {AlbumDialogComponent} from './album/album-dialog/album-dialog.component'
 import {MatSelectModule} from '@angular/material/select';
 import {AlbumCardComponent} from './album/album-card/album-card.component';
 import {AlbumCardService} from './album/album-card/album-card.service';
-import { ZenComponent } from './zen/zen.component';
-import { JournalComponent } from './journal/journal.component';
+import {ZenComponent} from './zen/zen.component';
+import {JournalComponent} from './journal/journal.component';
+import {JournalService} from './journal/journal.service';
 
 
 @NgModule({
@@ -46,7 +47,10 @@ import { JournalComponent } from './journal/journal.component';
     ReactiveFormsModule,
     MatSelectModule,
   ],
-  providers: [AlbumCardService],
+  providers: [
+    AlbumCardService,
+    JournalService,
+  ],
   bootstrap: []
 })
 export class CoreModule {
