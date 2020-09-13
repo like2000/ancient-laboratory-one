@@ -1027,6 +1027,26 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 
 /***/ }),
 
+/***/ "./src/app/core/journal/journal-model.ts":
+/*!***********************************************!*\
+  !*** ./src/app/core/journal/journal-model.ts ***!
+  \***********************************************/
+/*! exports provided: JournalModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JournalModel", function() { return JournalModel; });
+class JournalModel {
+    constructor(id, description) {
+        this.id = id;
+        this.description = description;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/core/journal/journal.component.ts":
 /*!***************************************************!*\
   !*** ./src/app/core/journal/journal.component.ts ***!
@@ -1050,11 +1070,15 @@ class JournalComponent {
         this.getMonth();
     }
     getMonth() {
-        this.service.getMonth().subscribe((response) => {
-            this.monthTable = response;
-        }, (error) => {
-            console.log(error);
-        });
+        return this.service.getMonth();
+        // this.service.getMonth().subscribe(
+        //   (response) => {
+        //     this.monthTable = response;
+        //   },
+        //   (error) => {
+        //     console.log(error);
+        //   }
+        // );
     }
 }
 JournalComponent.ɵfac = function JournalComponent_Factory(t) { return new (t || JournalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_journal_service__WEBPACK_IMPORTED_MODULE_1__["JournalService"])); };
@@ -1090,7 +1114,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JournalService", function() { return JournalService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _env__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../env */ "./src/app/env.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _journal_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./journal-model */ "./src/app/core/journal/journal-model.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
 
 
 
@@ -1101,17 +1127,17 @@ class JournalService {
         this.url = _env__WEBPACK_IMPORTED_MODULE_1__["API_URL"] + '/journal';
     }
     getMonth() {
-        return this.http.get(this.url + '/month');
+        return new _journal_model__WEBPACK_IMPORTED_MODULE_2__["JournalModel"](100, "Hello!");
     }
 }
-JournalService.ɵfac = function JournalService_Factory(t) { return new (t || JournalService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
+JournalService.ɵfac = function JournalService_Factory(t) { return new (t || JournalService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
 JournalService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: JournalService, factory: JournalService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JournalService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),

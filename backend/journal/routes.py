@@ -22,6 +22,7 @@ def month():
     df['weekday'] = list(map(lambda t: t.dayofweek, tr))
 
     da = pd.pivot(df, 'week', 'weekday')
+    print(da)
 
     return jsonify([{"Data": "Hello data!"}])
 
