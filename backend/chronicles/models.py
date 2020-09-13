@@ -10,8 +10,20 @@ class Chronicles(db.Model):
     active = db.Column(db.Boolean, primary_key=True)
     comment = db.Column(db.String, primary_key=True)
     description = db.Column(db.String, primary_key=True)
-    date = db.Column(db.DateTime, primary_key=True)
-    time = db.Column(db.DateTime, primary_key=True)
+    date = db.Column(db.String, primary_key=True)
+    time = db.Column(db.String, primary_key=True)
 
     def __repr__(self):
         return f"Chronicles from {self.date} {self.time}."
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'url': self.url,
+            'name': self.name,
+            'active': self.active,
+            'comment': self.comment,
+            'description': self.description,
+            'date': self.date,
+            'time': self.time,
+        }

@@ -23,9 +23,24 @@ def add():
     data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
     data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
-    global_data.append(data)
+    element = Chronicles(
+        id=data['id'],
+        url=data['url'],
+        name=data['name'],
+        active=data['active'],
+        comment=data['comment'],
+        description=data['description'],
+        date=data['date'],
+        time=data['time'],
+    )
+    db.session.add(element)
+    db.session.commit()
+    print(f"New element added: {element}")
 
-    return jsonify(global_data)
+    chronicles = Chronicles.query.all()
+    # global_data.append(data)
+
+    return jsonify([c.serialize() for c in chronicles])  # jsonify(chronicles)
 
 
 @blueprint.route('/get', methods=['GET'])
@@ -41,9 +56,9 @@ def get():
     #     'time': pd.to_datetime('now').strftime("%H:%M:%S"),
     # }
 
-    # global_data.append(data)
+    chronicles = Chronicles.query.all()
 
-    return jsonify(global_data)
+    return jsonify([c.serialize() for c in chronicles])  # jsonify(chronicles)
 
 
 @blueprint.route('/delete', methods=['GET', 'POST'])
