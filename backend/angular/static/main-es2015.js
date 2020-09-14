@@ -96,7 +96,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppComponent {
     constructor() {
-        this.title = 'frontend1';
+        this.title = 'Ancient Laboratory';
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
@@ -692,12 +692,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./album/album-dialog/album-dialog.component */ "./src/app/core/album/album-dialog/album-dialog.component.ts");
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
 /* harmony import */ var _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./album/album-card/album-card.component */ "./src/app/core/album/album-card/album-card.component.ts");
-/* harmony import */ var _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./album/album-card/album-card.service */ "./src/app/core/album/album-card/album-card.service.ts");
-/* harmony import */ var _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./zen/zen.component */ "./src/app/core/zen/zen.component.ts");
-/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./journal/journal.component */ "./src/app/core/journal/journal.component.ts");
-/* harmony import */ var _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./journal/journal.service */ "./src/app/core/journal/journal.service.ts");
-
-
+/* harmony import */ var _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./zen/zen.component */ "./src/app/core/zen/zen.component.ts");
+/* harmony import */ var _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./journal/journal.component */ "./src/app/core/journal/journal.component.ts");
 
 
 
@@ -723,8 +719,8 @@ class CoreModule {
 }
 CoreModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: CoreModule });
 CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function CoreModule_Factory(t) { return new (t || CoreModule)(); }, providers: [
-        _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__["AlbumCardService"],
-        _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__["JournalService"],
+    // AlbumCardService,
+    // JournalService,
     ], imports: [[
             _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
             _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
@@ -745,8 +741,8 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
         _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"],
         _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"],
         _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"],
-        _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"],
-        _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__["JournalComponent"]], imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
+        _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__["ZenComponent"],
+        _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__["JournalComponent"]], imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
         _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
         _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"],
         _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"],
@@ -768,8 +764,8 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"],
                     _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"],
                     _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"],
-                    _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"],
-                    _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__["JournalComponent"],
+                    _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__["ZenComponent"],
+                    _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__["JournalComponent"],
                 ],
                 imports: [
                     _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"],
@@ -786,8 +782,8 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                     _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"],
                 ],
                 providers: [
-                    _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__["AlbumCardService"],
-                    _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__["JournalService"],
+                // AlbumCardService,
+                // JournalService,
                 ],
                 bootstrap: []
             }]
@@ -1039,6 +1035,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JournalComponent", function() { return JournalComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _journal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./journal.service */ "./src/app/core/journal/journal.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
 
 
 
@@ -1052,7 +1050,6 @@ class JournalComponent {
         this.getMonth();
     }
     getMonth() {
-        // return this.service.getMonth();
         this.service.getMonth().subscribe((response) => {
             this.monthTable = response;
             console.log(response);
@@ -1062,14 +1059,15 @@ class JournalComponent {
     }
 }
 JournalComponent.ɵfac = function JournalComponent_Factory(t) { return new (t || JournalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_journal_service__WEBPACK_IMPORTED_MODULE_1__["JournalService"])); };
-JournalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: JournalComponent, selectors: [["app-journal"]], decls: 2, vars: 1, template: function JournalComponent_Template(rf, ctx) { if (rf & 1) {
+JournalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: JournalComponent, selectors: [["app-journal"]], decls: 3, vars: 3, template: function JournalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "json");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.getMonth(), " ");
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvam91cm5hbC9qb3VybmFsLmNvbXBvbmVudC5zY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 1, ctx.monthTable), " ");
+    } }, pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["JsonPipe"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvam91cm5hbC9qb3VybmFsLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](JournalComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1100,6 +1098,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class JournalService {
+    // url: string = API_URL + '/chronicles';
     constructor(http) {
         this.http = http;
         this.url = _env__WEBPACK_IMPORTED_MODULE_1__["API_URL"] + '/journal';
@@ -1108,6 +1107,7 @@ class JournalService {
     //   return new JournalModel(100, 'Hello!');
     // }
     getMonth() {
+        // return this.http.get<AlbumCard[]>(this.url + '/get');
         return this.http.get(this.url + '/month');
     }
 }

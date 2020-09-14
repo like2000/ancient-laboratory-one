@@ -208,7 +208,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
 
-      this.title = 'frontend1';
+      this.title = 'Ancient Laboratory';
     };
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
@@ -1466,27 +1466,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
-    /*! ./album/album-card/album-card.service */
-    "./src/app/core/album/album-card/album-card.service.ts");
-    /* harmony import */
-
-
-    var _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    var _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./zen/zen.component */
     "./src/app/core/zen/zen.component.ts");
     /* harmony import */
 
 
-    var _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    var _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./journal/journal.component */
     "./src/app/core/journal/journal.component.ts");
-    /* harmony import */
-
-
-    var _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
-    /*! ./journal/journal.service */
-    "./src/app/core/journal/journal.service.ts");
 
     var CoreModule = function CoreModule() {
       _classCallCheck(this, CoreModule);
@@ -1499,13 +1487,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function CoreModule_Factory(t) {
         return new (t || CoreModule)();
       },
-      providers: [_album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__["AlbumCardService"], _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__["JournalService"]],
+      providers: [// AlbumCardService,
+        // JournalService,
+      ],
       imports: [[_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_9__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoreModule, {
-        declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"], _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__["JournalComponent"]],
+        declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__["ZenComponent"], _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__["JournalComponent"]],
         imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_9__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"]]
       });
     })();
@@ -1516,9 +1506,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoreModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_19__["ZenComponent"], _journal_journal_component__WEBPACK_IMPORTED_MODULE_20__["JournalComponent"]],
+          declarations: [_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], _album_album_component__WEBPACK_IMPORTED_MODULE_2__["AlbumComponent"], _home_home_dialog_home_dialog_component__WEBPACK_IMPORTED_MODULE_4__["HomeDialogComponent"], _album_album_files_album_files_component__WEBPACK_IMPORTED_MODULE_1__["AlbumFilesComponent"], _album_album_dialog_album_dialog_component__WEBPACK_IMPORTED_MODULE_15__["AlbumDialogComponent"], _album_album_card_album_card_component__WEBPACK_IMPORTED_MODULE_17__["AlbumCardComponent"], _zen_zen_component__WEBPACK_IMPORTED_MODULE_18__["ZenComponent"], _journal_journal_component__WEBPACK_IMPORTED_MODULE_19__["JournalComponent"]],
           imports: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIconModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_9__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_16__["MatSelectModule"]],
-          providers: [_album_album_card_album_card_service__WEBPACK_IMPORTED_MODULE_18__["AlbumCardService"], _journal_journal_service__WEBPACK_IMPORTED_MODULE_21__["JournalService"]],
+          providers: [// AlbumCardService,
+            // JournalService,
+          ],
           bootstrap: []
         }]
       }], null, null);
@@ -2056,6 +2048,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _journal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ./journal.service */
     "./src/app/core/journal/journal.service.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     var JournalComponent = /*#__PURE__*/function () {
       function JournalComponent(service) {
@@ -2076,7 +2074,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getMonth() {
           var _this4 = this;
 
-          // return this.service.getMonth();
           this.service.getMonth().subscribe(function (response) {
             _this4.monthTable = response;
             console.log(response);
@@ -2096,13 +2093,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     JournalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: JournalComponent,
       selectors: [["app-journal"]],
-      decls: 2,
-      vars: 1,
+      decls: 3,
+      vars: 3,
       template: function JournalComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "json");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -2110,9 +2109,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.getMonth(), " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 1, ctx.monthTable), " ");
         }
       },
+      pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["JsonPipe"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvam91cm5hbC9qb3VybmFsLmNvbXBvbmVudC5zY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -2174,6 +2174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
     var JournalService = /*#__PURE__*/function () {
+      // url: string = API_URL + '/chronicles';
       function JournalService(http) {
         _classCallCheck(this, JournalService);
 
@@ -2187,6 +2188,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(JournalService, [{
         key: "getMonth",
         value: function getMonth() {
+          // return this.http.get<AlbumCard[]>(this.url + '/get');
           return this.http.get(this.url + '/month');
         }
       }]);

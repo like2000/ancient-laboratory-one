@@ -16,10 +16,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AlbumDialogComponent} from './album/album-dialog/album-dialog.component';
 import {MatSelectModule} from '@angular/material/select';
 import {AlbumCardComponent} from './album/album-card/album-card.component';
-import {AlbumCardService} from './album/album-card/album-card.service';
 import {ZenComponent} from './zen/zen.component';
 import {JournalComponent} from './journal/journal.component';
-import {JournalService} from './journal/journal.service';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -46,6 +45,7 @@ import {JournalService} from './journal/journal.service';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatTableModule,
   ],
   providers: [
     // AlbumCardService,
