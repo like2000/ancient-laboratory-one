@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {JournalService} from './journal.service';
-import {JournalModel} from './journal-model';
 
 @Component({
   selector: 'app-journal',
@@ -12,21 +11,23 @@ export class JournalComponent implements OnInit {
   monthTable: JSON;
 
   constructor(private service: JournalService) {
+    this.monthTable = null;
   }
 
   ngOnInit(): void {
+    console.log('Initialize Journal Component...');
     this.getMonth();
   }
 
-  getMonth(): JournalModel {
-    return this.service.getMonth();
-    // this.service.getMonth().subscribe(
-    //   (response) => {
-    //     this.monthTable = response;
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
+  getMonth(): void {
+    this.service.getMonth().subscribe(
+      (response) => {
+        this.monthTable = response;
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlbumCardService} from './album-card/album-card.service';
 import {AlbumCard} from './album-card/album-card';
-import {HomeDialogComponent} from '../home/home-dialog/home-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
-import {AlbumDialogComponent} from './album-dialog/album-dialog.component';
-import {AlbumCardComponent} from './album-card/album-card.component';
 
 @Component({
   selector: 'app-album',

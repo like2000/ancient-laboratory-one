@@ -2026,36 +2026,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/core/journal/journal-model.ts":
-  /*!***********************************************!*\
-    !*** ./src/app/core/journal/journal-model.ts ***!
-    \***********************************************/
-
-  /*! exports provided: JournalModel */
-
-  /***/
-  function srcAppCoreJournalJournalModelTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "JournalModel", function () {
-      return JournalModel;
-    });
-
-    var JournalModel = function JournalModel(id, description) {
-      _classCallCheck(this, JournalModel);
-
-      this.id = id;
-      this.description = description;
-    };
-    /***/
-
-  },
-
-  /***/
   "./src/app/core/journal/journal.component.ts":
   /*!***************************************************!*\
     !*** ./src/app/core/journal/journal.component.ts ***!
@@ -2092,24 +2062,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, JournalComponent);
 
         this.service = service;
+        this.monthTable = null;
       }
 
       _createClass(JournalComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          console.log('Initialize Journal Component...');
           this.getMonth();
         }
       }, {
         key: "getMonth",
         value: function getMonth() {
-          return this.service.getMonth(); // this.service.getMonth().subscribe(
-          //   (response) => {
-          //     this.monthTable = response;
-          //   },
-          //   (error) => {
-          //     console.log(error);
-          //   }
-          // );
+          var _this4 = this;
+
+          // return this.service.getMonth();
+          this.service.getMonth().subscribe(function (response) {
+            _this4.monthTable = response;
+            console.log(response);
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 
@@ -2196,13 +2169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _journal_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./journal-model */
-    "./src/app/core/journal/journal-model.ts");
-    /* harmony import */
-
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
@@ -2212,12 +2179,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http;
         this.url = _env__WEBPACK_IMPORTED_MODULE_1__["API_URL"] + '/journal';
-      }
+      } // getMonth(): JournalModel {
+      //   return new JournalModel(100, 'Hello!');
+      // }
+
 
       _createClass(JournalService, [{
         key: "getMonth",
         value: function getMonth() {
-          return new _journal_model__WEBPACK_IMPORTED_MODULE_2__["JournalModel"](100, "Hello!");
+          return this.http.get(this.url + '/month');
         }
       }]);
 
@@ -2225,7 +2195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     JournalService.ɵfac = function JournalService_Factory(t) {
-      return new (t || JournalService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]));
+      return new (t || JournalService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
     };
 
     JournalService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -2243,7 +2213,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [{
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
         }];
       }, null);
     })();

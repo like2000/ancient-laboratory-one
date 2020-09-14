@@ -12,19 +12,20 @@ def index():
 
 @blueprint.route('/month', methods=['GET'])
 def month():
-    year = pd.to_datetime('today').year
-    month = pd.to_datetime('today').month
-    tr = pd.date_range(f"{year}-{month}", f"{year}-{month + 1}", closed='left')
-
-    df = pd.DataFrame()
-    df['day'] = list(map(lambda t: t.day, tr))
-    df['week'] = list(map(lambda t: t.week, tr))
-    df['weekday'] = list(map(lambda t: t.dayofweek, tr))
-
-    da = pd.pivot(df, 'week', 'weekday')
-    print(da)
-
-    return jsonify([{"Data": "Hello data!"}])
+    return "Hello!"
+    # year = pd.to_datetime('today').year
+    # month = pd.to_datetime('today').month
+    # tr = pd.date_range(f"{year}-{month}", f"{year}-{month + 1}", closed='left')
+    #
+    # df = pd.DataFrame()
+    # df['day'] = list(map(lambda t: t.day, tr))
+    # df['week'] = list(map(lambda t: t.week, tr))
+    # df['weekday'] = list(map(lambda t: t.dayofweek, tr))
+    #
+    # da = pd.pivot(df, 'week', 'weekday')
+    # print(da)
+    #
+    # return jsonify([{"Data": "Hello data!"}])
 
 # if __name__ == '__main__':
 #     month()

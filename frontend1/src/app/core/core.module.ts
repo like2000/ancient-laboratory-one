@@ -48,8 +48,8 @@ import {JournalService} from './journal/journal.service';
     MatSelectModule,
   ],
   providers: [
-    AlbumCardService,
-    JournalService,
+    // AlbumCardService,
+    // JournalService,
   ],
   bootstrap: []
 })

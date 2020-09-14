@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AlbumCard} from './album-card';
-import {AlbumCardService} from './album-card.service';
 
 @Component({
   selector: 'app-album-card',
