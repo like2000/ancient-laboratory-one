@@ -1,7 +1,45 @@
-//.mat-cell {
-//  width: 26px;
-//  height: 26px;
-//  padding-left: 0;
-//  display: inline-flex;
-//  border-left: 4px solid white;
+.mat-table {
+  margin: auto;
+  //  width: 80vh;
+  //  height: 60vh;
+}
+
+.mat-header-row {
+  height: 6vh;
+  background: teal;
+  border-bottom: solid 2px gray;
+}
+
+//.mat-row {
+//  height: 20vh;
 //}
+
+.mat-header-cell {
+  width: 12vh;
+  height: 6vh;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.mat-cell:hover {
+  color: white;
+  background: darkred;
+}
+
+.mat-cell {
+  width: 12vh;
+  height: 12vh;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  border: solid 0.5px gray;
+  //padding-left: 0;
+  //display: inline-flex;
+  //border-left: 4px solid white;
+}

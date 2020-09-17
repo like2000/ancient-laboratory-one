@@ -2,7 +2,6 @@ import {Injectable, OnInit} from '@angular/core';
 import {API_URL} from '../../env';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {JournalModel} from './journal-model';
 
 @Injectable({
   providedIn: 'root'
