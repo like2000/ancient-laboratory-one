@@ -13,9 +13,7 @@
   height: 50px;
   color: white;
   font-weight: bold;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
+  text-align: center;
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
@@ -23,29 +21,27 @@
 
 .mat-cell {
   padding: 0;
+  margin: auto;
   width: 100px;
   height: 100px;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
+  text-align: center;
   border: solid 0.5px gray;
 }
 
-.mat-cell:first-of-type, .mat-header-cell:first-of-type {
-  padding: 0;
+.mat-cell:first-of-type,
+.mat-header-cell:first-of-type {
   width: 50px;
   color: white;
   background: teal;
+  font-weight: bold;
 }
 
-.mat-cell:last-of-type, .mat-header-cell:last-of-type {
+.mat-cell:first-of-type,
+.mat-cell:last-of-type,
+.mat-header-cell:first-of-type,
+.mat-header-cell:last-of-type {
   padding: 0;
 }
-
-// {
-//  width: 50px;
-//  background: teal;
-//}
 
 .mat-cell:not(:first-of-type):hover {
   color: white;

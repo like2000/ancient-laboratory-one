@@ -25,6 +25,7 @@ class Config:
 
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get("DATABASE_URL")
+    print(SQLALCHEMY_DATABASE_URI)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
 
