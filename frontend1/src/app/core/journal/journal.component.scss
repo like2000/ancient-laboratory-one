@@ -1,22 +1,16 @@
 .mat-table {
   margin: auto;
-  //  width: 80vh;
-  //  height: 60vh;
 }
 
 .mat-header-row {
-  height: 6vh;
+  height: 50px;
   background: teal;
   border-bottom: solid 2px gray;
 }
 
-//.mat-row {
-//  height: 20vh;
-//}
-
 .mat-header-cell {
-  width: 12vh;
-  height: 6vh;
+  width: 100px;
+  height: 50px;
   color: white;
   font-weight: bold;
   align-items: center;
@@ -27,19 +21,33 @@
   border-right: 1px solid white;
 }
 
-.mat-cell:hover {
-  color: white;
-  background: darkred;
-}
-
 .mat-cell {
-  width: 12vh;
-  height: 12vh;
+  padding: 0;
+  width: 100px;
+  height: 100px;
   align-items: center;
   display: inline-flex;
   justify-content: center;
   border: solid 0.5px gray;
-  //padding-left: 0;
-  //display: inline-flex;
-  //border-left: 4px solid white;
+}
+
+.mat-cell:first-of-type, .mat-header-cell:first-of-type {
+  padding: 0;
+  width: 50px;
+  color: white;
+  background: teal;
+}
+
+.mat-cell:last-of-type, .mat-header-cell:last-of-type {
+  padding: 0;
+}
+
+// {
+//  width: 50px;
+//  background: teal;
+//}
+
+.mat-cell:not(:first-of-type):hover {
+  color: white;
+  background: darkred;
 }

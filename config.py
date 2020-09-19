@@ -11,6 +11,9 @@ db_name = "database.db"
 
 class Config:
     """Set Flask configuration variables from .env file."""
+    DEBUG = False
+    TESTING = False
+    CSRF_ENABLED = True
 
     # General Flask Config
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
@@ -21,19 +24,15 @@ class Config:
     FLASK_DEBUG = 1
 
     # Database
-    SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI") or 'sqlite:///' + path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
 
 
-class LocalConfig:
-    # General Flask Config
-    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-    UPLOAD_FOLDER = basedir + '/backend/resources'
-    SECRET_KEY = environ.get('SECRET_KEY')
-    FLASK_ENV = environ.get('FLASK_ENV')
-    FLASK_APP = 'wsgi.py'
-    FLASK_DEBUG = 1
+class LocalConfig(Config):
+    DEBUG = True
+    TESTING = True
+    CSRF_ENABLED = True
 
     # Database
     SQLALCHEMY_DATABASE_URI = 'sqlite:///resources/' + db_name
