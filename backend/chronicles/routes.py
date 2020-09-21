@@ -18,8 +18,7 @@ def index():
 @blueprint.route('/add', methods=['GET', 'POST'])
 def add():
     data = json.loads(request.data)
-    # data['id'] = pd.to_datetime('now').value
-    data['id'] = pd.to_datetime('now').astype(np.int32)
+    data['id'] = pd.to_datetime('now').value // 1000000000
     data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
     data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
@@ -45,6 +44,7 @@ def add():
 @blueprint.route('/get', methods=['GET'])
 def get():
     chronicles = Chronicles.query.all()
+    print(chronicles)
 
     return jsonify([c.serialize() for c in chronicles])  # jsonify(chronicles)
 
