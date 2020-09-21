@@ -1,5 +1,6 @@
 import json
 import pathlib
+import numpy as np
 import pandas as pd
 
 from flask import jsonify, request
@@ -17,7 +18,8 @@ def index():
 @blueprint.route('/add', methods=['GET', 'POST'])
 def add():
     data = json.loads(request.data)
-    data['id'] = pd.to_datetime('now').value
+    # data['id'] = pd.to_datetime('now').value
+    data['id'] = pd.to_datetime('now').astype(np.int32)
     data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
     data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
