@@ -2,16 +2,24 @@ from backend import db
 
 
 class Chronicles(db.Model):
-    __tablename__ = 'chronicles'
+    # __tablename__ = 'chronicles'
 
-    id = db.Column(db.BigInteger, primary_key=True)
-    url = db.Column(db.String, primary_key=True)
-    name = db.Column(db.String, primary_key=True)
-    active = db.Column(db.Boolean, primary_key=True)
-    comment = db.Column(db.String, primary_key=True)
-    description = db.Column(db.String, primary_key=True)
-    date = db.Column(db.String, primary_key=True)
-    time = db.Column(db.String, primary_key=True)
+    # id = db.Column(db.BigInteger, primary_key=True)
+    # url = db.Column(db.String, primary_key=True)
+    # name = db.Column(db.String, primary_key=True)
+    # active = db.Column(db.Boolean, primary_key=True)
+    # comment = db.Column(db.String, primary_key=True)
+    # description = db.Column(db.String, primary_key=True)
+    # date = db.Column(db.String, primary_key=True)
+    # time = db.Column(db.String, primary_key=True)
+
+    __tablename__ = 'morpheus'
+
+    type = db.Column(db.String)
+    stop = db.Column(db.String)
+    start = db.Column(db.String)
+    total = db.Column(db.Numeric)
+    quality = db.Column(db.Numeric)
 
     def __repr__(self):
         return f"Chronicles from {self.date} {self.time}."
