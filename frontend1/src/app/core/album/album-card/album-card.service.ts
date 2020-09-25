@@ -23,8 +23,7 @@ export class AlbumCardService {
   }
 
   addCards() {
-    const card: AlbumCard = new AlbumCard(1, '1234.jpg', 'johanni', '2020', '12:00',
-      false, 'yet another comment', 'some text');
+    const card: AlbumCard = new AlbumCard(1, '100', '100', '2020', 8, 5, false);
 
     return this.http.post<AlbumCard[]>(this.url + '/add', card);
   }

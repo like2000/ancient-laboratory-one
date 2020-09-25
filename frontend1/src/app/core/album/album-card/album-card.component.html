@@ -2,26 +2,23 @@
           [ngClass]="albumCard.active? 'active' : 'inactive'"
           style="margin: auto; height: 90%; width: 90%; display: flex; align-content: center;">
   <!--  {{i}}-->
-  <div style="width:60%; margin: auto;">
+  <div style="width:60%; margin: auto; font-weight: bold; font-size: 14pt;">
     <table>
       <tr>
-        <td>Date:</td>
-        <td>{{albumCard.date}}</td>
-        <td>Time:</td>
-        <td>{{albumCard.time}}</td>
-      </tr>
-    </table>
-  </div>
-
-  <div style="width:60%; margin: auto;">
-    <table>
-      <tr>
-        <td>Set reps:</td>
-        <td>{{albumCard.comment}}</td>
+        <td>Start:</td>
+        <td>{{albumCard.start}}</td>
       </tr>
       <tr>
-        <td>Total reps:</td>
-        <td>{{albumCard.description}}</td>
+        <td>Stop:</td>
+        <td>{{albumCard.stop}}</td>
+      </tr>
+      <tr>
+        <td>Total:</td>
+        <td>{{albumCard.total}}</td>
+      </tr>
+      <tr>
+        <td>Quality:</td>
+        <td>{{albumCard.quality}}</td>
       </tr>
     </table>
   </div>

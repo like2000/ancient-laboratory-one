@@ -1,3 +1,10 @@
+<div style="position: fixed; width: 20%; left: 75%; display: flex; justify-content: space-between; z-index: 2;">
+  <button mat-raised-button color="primary" style="width: 100px;">Start</button>
+  <button mat-raised-button color="primary" style="width: 100px;">Stop</button>
+</div>
+
+<br><br>
+
 <mat-grid-list cols="2" rowHeight="16:9">
   <mat-grid-tile *ngFor="let card of albumCardsList; let i = index;">
     <app-album-card [albumCard]="card" style="width: 100%; height:100%; display: flex;"></app-album-card>

@@ -15,23 +15,24 @@ class Chronicles(db.Model):
 
     __tablename__ = 'morpheus'
 
-    type = db.Column(db.String)
-    stop = db.Column(db.String)
-    start = db.Column(db.String)
-    total = db.Column(db.Numeric)
-    quality = db.Column(db.Numeric)
+    id = db.Column(db.BigInteger, primary_key=True)
+    active = db.Column(db.Boolean, primary_key=True)
+    type = db.Column(db.String, primary_key=True)
+    stop = db.Column(db.String, primary_key=True)
+    start = db.Column(db.String, primary_key=True)
+    total = db.Column(db.Integer, primary_key=True)
+    quality = db.Column(db.Integer, primary_key=True)
 
     def __repr__(self):
-        return f"Chronicles from {self.date} {self.time}."
+        return f"Chronicles from {self.start} to {self.stop}."
 
     def serialize(self):
         return {
             'id': self.id,
-            'url': self.url,
-            'name': self.name,
             'active': self.active,
-            'comment': self.comment,
-            'description': self.description,
-            'date': self.date,
-            'time': self.time,
+            'type': self.type,
+            'stop': self.stop,
+            'start': self.start,
+            'total': self.total,
+            'quality': self.quality,
         }

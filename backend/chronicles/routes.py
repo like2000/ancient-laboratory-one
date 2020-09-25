@@ -19,19 +19,33 @@ def index():
 def add():
     data = json.loads(request.data)
     data['id'] = pd.to_datetime('now').value // 1000000000
-    data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
-    data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
+    data['type'] = 'Sleep'
+    data['stop'] = pd.to_datetime('now') + pd.to_timedelta('2 hours')
+    data['start'] = pd.to_datetime('now')
+    data['total'] = data['stop'] - data['start']
+    # data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
+    # data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
 
     element = Chronicles(
         id=data['id'],
-        url=data['url'],
-        name=data['name'],
         active=data['active'],
-        comment=data['comment'],
-        description=data['description'],
-        date=data['date'],
-        time=data['time'],
+        type=data['type'],
+        stop=data['stop'].strftime('%H:%M:%S'),
+        start=data['start'].strftime('%H:%M:%S'),
+        total=np.round(data['total'].seconds / 3600).astype(int).item(),
+        quality=data['quality'],
     )
+    # element = Chronicles(
+    #     id=data['id'],
+    #     url=data['url'],
+    #     name=data['name'],
+    #     active=data['active'],
+    #     comment=data['comment'],
+    #     description=data['description'],
+    #     date=data['date'],
+    #     time=data['time'],
+    # )
+
     db.session.add(element)
     db.session.commit()
     print(f"New element added: {element}")

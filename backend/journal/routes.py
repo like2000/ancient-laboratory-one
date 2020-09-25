@@ -21,7 +21,7 @@ def month():
     df['weekday'] = list(map(lambda t: t.dayofweek, tr))
 
     da = pd.pivot(df, 'week', 'weekday')
-    da.fillna(-1, inplace=True)
+    da.fillna('', inplace=True)
     # da = da.astype('object')
 
     header = ["Week", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
