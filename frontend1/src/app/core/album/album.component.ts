@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AlbumCardService} from './album-card/album-card.service';
 import {AlbumCard} from './album-card/album-card';
 import {MatDialog} from '@angular/material/dialog';
-import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-album',
@@ -37,6 +37,14 @@ export class AlbumComponent implements OnInit {
   //   // }
   //   // this.selected[i] = true;
   // }
+
+  setStart(): void {
+
+  }
+
+  setStop(): void {
+
+  }
 
   addData(): void {
     // const dialogRef = this.dialog.open(AlbumDialogComponent, {

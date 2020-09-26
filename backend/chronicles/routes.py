@@ -29,18 +29,18 @@ def add():
     data['active'] = False
     data['type'] = 'Sleep'
 
-    data['stop'] = ts + pd.to_timedelta('2 hours')
-    data['start'] = ts
-    data['total'] = data['stop'] - data['start']
-    data['quality'] = 5
+    data['stop'] = None
+    data['start'] = None
+    data['total'] = None
+    data['quality'] = None
 
     element = Chronicles(
         id=data['id'],
         active=data['active'],
         type=data['type'],
-        stop=data['stop'].strftime('%H:%M:%S'),
-        start=data['start'].strftime('%H:%M:%S'),
-        total=np.round(data['total'].seconds / 3600).astype(int).item(),
+        stop=data['stop'],
+        start=data['start'],
+        total=data['total'],
         quality=data['quality'],
         day=ts.strftime('%d'),
         year=ts.strftime('%Y'),
