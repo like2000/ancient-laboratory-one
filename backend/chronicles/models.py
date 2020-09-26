@@ -22,6 +22,10 @@ class Chronicles(db.Model):
     start = db.Column(db.String, primary_key=True)
     total = db.Column(db.Integer, primary_key=True)
     quality = db.Column(db.Integer, primary_key=True)
+    day = db.Column(db.String, primary_key=True)
+    year = db.Column(db.String, primary_key=True)
+    month = db.Column(db.String, primary_key=True)
+    weekday = db.Column(db.String, primary_key=True)
 
     def __repr__(self):
         return f"Chronicles from {self.start} to {self.stop}."
@@ -35,4 +39,8 @@ class Chronicles(db.Model):
             'start': self.start,
             'total': self.total,
             'quality': self.quality,
+            'day': self.day,
+            'year': self.year,
+            'month': self.month,
+            'weekday': self.weekday,
         }

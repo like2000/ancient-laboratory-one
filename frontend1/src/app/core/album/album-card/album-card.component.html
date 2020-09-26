@@ -1,8 +1,8 @@
-<mat-card class="mat-elevation-z4" (click)="toggleSelected()"
-          [ngClass]="albumCard.active? 'active' : 'inactive'"
-          style="margin: auto; height: 90%; width: 90%; display: flex; align-content: center;">
+<mat-card class="mat-elevation-z4" (click)="toggleSelected()" [ngClass]="albumCard.active? 'active' : 'inactive'">
   <!--  {{i}}-->
-  <div style="width:60%; margin: auto; font-weight: bold; font-size: 14pt;">
+  <div
+    style="width:70%; margin: auto; overflow-x: auto; font-weight: bold; font-size: 14pt;">
+    <p>{{albumCard.weekday}}, {{albumCard.day}}. {{albumCard.month}} {{albumCard.year}}</p>
     <table>
       <tr>
         <td>Start:</td>
@@ -22,16 +22,16 @@
       </tr>
     </table>
   </div>
-
-  <button mat-fab style="position: relative; left: 80%; top: 80%;">
-    <mat-icon>add_circle</mat-icon>
-  </button>
-
-  <button mat-fab style="position: relative; left: 85%; top: 80%">
-    <mat-icon>get_app</mat-icon>
-  </button>
-
-  <button mat-fab style="position: relative; left: 90%; top: 80%">
-    <mat-icon>delete</mat-icon>
-  </button>
 </mat-card>
+
+<button mat-fab style="position: relative; left: 80%; top: 80%;">
+  <mat-icon>add_circle</mat-icon>
+</button>
+
+<button mat-fab style="position: relative; left: 85%; top: 80%">
+  <mat-icon>get_app</mat-icon>
+</button>
+
+<button mat-fab style="position: relative; left: 90%; top: 80%">
+  <mat-icon>delete</mat-icon>
+</button>

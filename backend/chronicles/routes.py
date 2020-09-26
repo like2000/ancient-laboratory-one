@@ -1,4 +1,5 @@
 import json
+import locale
 import pathlib
 import numpy as np
 import pandas as pd
@@ -9,6 +10,8 @@ from backend import db
 from backend.chronicles import blueprint
 from backend.chronicles.models import Chronicles
 
+locale.setlocale(locale.LC_ALL, 'de_CH')
+
 
 @blueprint.route('/')
 def index():
@@ -17,14 +20,18 @@ def index():
 
 @blueprint.route('/add', methods=['GET', 'POST'])
 def add():
+    ts: pd.Timestamp = pd.to_datetime('now')
+
     data = json.loads(request.data)
-    data['id'] = pd.to_datetime('now').value // 1000000000
+
+    data['id'] = ts.value // 1000000000
+    data['active'] = False
     data['type'] = 'Sleep'
-    data['stop'] = pd.to_datetime('now') + pd.to_timedelta('2 hours')
-    data['start'] = pd.to_datetime('now')
+
+    data['stop'] = ts + pd.to_timedelta('2 hours')
+    data['start'] = ts
     data['total'] = data['stop'] - data['start']
-    # data['date'] = pd.to_datetime('now').strftime('%d.%m.%Y')
-    # data['time'] = pd.to_datetime('now').strftime('%H:%M:%S')
+    data['quality'] = 5
 
     element = Chronicles(
         id=data['id'],
@@ -34,6 +41,10 @@ def add():
         start=data['start'].strftime('%H:%M:%S'),
         total=np.round(data['total'].seconds / 3600).astype(int).item(),
         quality=data['quality'],
+        day=ts.strftime('%d'),
+        year=ts.strftime('%Y'),
+        month=ts.strftime('%B'),
+        weekday=ts.strftime('%A'),
     )
     # element = Chronicles(
     #     id=data['id'],

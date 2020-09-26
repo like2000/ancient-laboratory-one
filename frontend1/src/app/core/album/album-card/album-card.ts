@@ -7,16 +7,24 @@ export class AlbumCard {
   start: string;
   total: number;
   quality: number;
+  day: string;
+  year: string;
+  month: string;
+  weekday: string;
 
-  constructor(id: number, type: string, stop: string, start: string, total: number, quality: number, active: boolean) {
-    this.id = id;
-    this.active = active;
-    this.type = type;
-    this.stop = stop;
-    this.start = start;
-    this.total = total;
-    this.quality = quality;
-  }
+  // constructor(id: number, type: string, stop: string, start: string, total: number, quality: number, active: boolean,
+  //             day: string, month: string, weekday: string) {
+  //   this.id = id;
+  //   this.active = active;
+  //   this.type = type;
+  //   this.stop = stop;
+  //   this.start = start;
+  //   this.total = total;
+  //   this.quality = quality;
+  //   this.day = day;
+  //   this.month = month;
+  //   this.weekday = weekday;
+  // }
 }
 
 // export class AlbumCard {
