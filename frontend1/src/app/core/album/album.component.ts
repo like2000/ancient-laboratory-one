@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AlbumCardService} from './album-card/album-card.service';
 import {AlbumCard} from './album-card/album-card';
 import {MatDialog} from '@angular/material/dialog';
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-album',
@@ -10,14 +11,23 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class AlbumComponent implements OnInit {
 
+  // nCols: number;
+  isMobile: boolean;
   albumCardsList: Array<AlbumCard>;
 
-  constructor(private service: AlbumCardService, private dialog: MatDialog) {
+  constructor(private service: AlbumCardService, private dialog: MatDialog, private breakpointObserver: BreakpointObserver) {
     this.albumCardsList = [];
+
+    breakpointObserver.observe([
+      Breakpoints.Handset
+    ]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
   }
 
   ngOnInit(): void {
     this.getData();
+    // this.nCols = (window.innerWidth < 400) ? 1 : 2;
   }
 
   // toggleSelected(i): void {

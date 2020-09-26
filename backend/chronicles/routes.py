@@ -10,7 +10,8 @@ from backend import db
 from backend.chronicles import blueprint
 from backend.chronicles.models import Chronicles
 
-locale.setlocale(locale.LC_ALL, 'de_CH')
+
+# locale.setlocale(locale.LC_ALL, 'de_CH')
 
 
 @blueprint.route('/')

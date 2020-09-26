@@ -14,7 +14,6 @@ def register_blueprints(server: Flask):
     for module_name in ('angular', 'chronicles', 'files', 'journal'):
         module = import_module(f'backend.{module_name}.routes')
         server.register_blueprint(module.blueprint)
-        # server.register_blueprint(module.blueprint, url_prefix=f'/{module_name}')
 
 
 def create_app():
